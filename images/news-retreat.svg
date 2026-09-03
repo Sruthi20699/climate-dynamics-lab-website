@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 240" role="img" aria-label="Illustration of mountains at dusk, representing the annual lab retreat">
+  <defs>
+    <linearGradient id="ng4" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0A1F3F"/>
+      <stop offset="100%" stop-color="#2C7BB0"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="240" fill="url(#ng4)"/>
+  <circle cx="320" cy="55" r="24" fill="#F8F9FA" opacity="0.9"/>
+  <g fill="#FFFFFF" opacity="0.6">
+    <circle cx="60" cy="40" r="1.5"/>
+    <circle cx="90" cy="65" r="1.5"/>
+    <circle cx="140" cy="30" r="1.5"/>
+    <circle cx="230" cy="45" r="1.5"/>
+  </g>
+  <polygon points="0,190 70,110 130,170 190,90 260,180 320,120 400,190" fill="#0F2C59"/>
+  <polygon points="0,210 90,150 160,200 240,140 320,205 400,160 400,240 0,240" fill="#0A1F3F"/>
+  <path d="M0,205 C50,195 100,212 150,205 C200,198 250,215 300,205 C340,198 370,207 400,203 L400,240 L0,240 Z" fill="rgba(255,255,255,0.08)"/>
+</svg>

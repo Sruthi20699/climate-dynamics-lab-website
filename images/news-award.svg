@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 240" role="img" aria-label="Illustration of an award ribbon, representing a student award">
+  <defs>
+    <linearGradient id="ng2" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0F2C59"/>
+      <stop offset="100%" stop-color="#005691"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="240" fill="url(#ng2)"/>
+  <polygon points="180,120 165,200 200,175 235,200 220,120" fill="#2C7BB0"/>
+  <circle cx="200" cy="100" r="42" fill="#9FC1E0"/>
+  <circle cx="200" cy="100" r="42" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-dasharray="6 6"/>
+  <circle cx="200" cy="100" r="24" fill="#0F2C59"/>
+  <path d="M0,190 C50,175 100,200 150,190 C200,180 250,203 300,190 C340,180 370,193 400,187 L400,240 L0,240 Z" fill="rgba(255,255,255,0.08)"/>
+</svg>

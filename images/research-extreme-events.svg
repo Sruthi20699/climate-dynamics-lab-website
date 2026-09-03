@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 380" role="img" aria-label="Illustration of an extreme storm system">
+  <defs>
+    <linearGradient id="sky4" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0A1F3F"/>
+      <stop offset="55%" stop-color="#0F2C59"/>
+      <stop offset="100%" stop-color="#3A2E1F"/>
+    </linearGradient>
+  </defs>
+  <rect width="560" height="380" fill="url(#sky4)"/>
+  <g transform="translate(300,160)">
+    <path d="M0,0 C40,-10 60,20 40,45 C60,45 75,70 55,90 C70,95 78,118 55,130"
+          fill="none" stroke="#9FC1E0" stroke-width="4" stroke-linecap="round" opacity="0.85"/>
+    <path d="M-10,-40 C25,-55 55,-30 45,0 C65,-5 85,15 70,40"
+          fill="none" stroke="#2C7BB0" stroke-width="4" stroke-linecap="round" opacity="0.7"/>
+  </g>
+  <polygon points="250,60 230,140 260,135 235,220 300,110 268,118 288,60" fill="#E0B04B" opacity="0.85"/>
+  <g stroke="#9FC1E0" stroke-opacity="0.4" stroke-width="2" stroke-linecap="round">
+    <line x1="40" y1="260" x2="90" y2="245"/>
+    <line x1="70" y1="290" x2="120" y2="278"/>
+    <line x1="460" y1="270" x2="510" y2="258"/>
+    <line x1="440" y1="300" x2="495" y2="288"/>
+  </g>
+  <path d="M0,300 C70,285 140,312 210,300 C280,288 350,315 420,300 C490,286 530,305 560,298 L560,380 L0,380 Z" fill="rgba(255,255,255,0.06)"/>
+</svg>

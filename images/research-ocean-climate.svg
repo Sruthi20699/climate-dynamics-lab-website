@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 380" role="img" aria-label="Illustration of ocean circulation and air-sea interaction">
+  <defs>
+    <linearGradient id="sky2" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0F2C59"/>
+      <stop offset="100%" stop-color="#005691"/>
+    </linearGradient>
+  </defs>
+  <rect width="560" height="380" fill="url(#sky2)"/>
+  <g transform="translate(140,130)" fill="none" stroke="#FFFFFF" stroke-opacity="0.5" stroke-width="3">
+    <circle r="70" stroke-dasharray="8 10"/>
+    <circle r="46" stroke-dasharray="5 8"/>
+    <path d="M60,-45 l14,4 l-4,-14" stroke-dasharray="0"/>
+  </g>
+  <g transform="translate(400,90)" fill="none" stroke="#9FC1E0" stroke-opacity="0.6" stroke-width="3">
+    <circle r="46" stroke-dasharray="6 9"/>
+    <path d="M-38,-24 l-14,-3 l6,13" stroke-dasharray="0"/>
+  </g>
+  <path d="M0,230 C70,205 140,245 210,230 C280,215 350,250 420,230 C490,212 530,235 560,226 L560,380 L0,380 Z" fill="rgba(255,255,255,0.08)"/>
+  <path d="M0,262 C70,242 140,275 210,262 C280,248 350,278 420,262 C490,247 530,268 560,258 L560,380 L0,380 Z" fill="rgba(255,255,255,0.12)"/>
+  <path d="M0,296 C70,280 140,308 210,296 C280,283 350,308 420,296 C490,285 530,302 560,294 L560,380 L0,380 Z" fill="rgba(255,255,255,0.18)"/>
+</svg>

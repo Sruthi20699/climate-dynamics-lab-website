@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="Avatar illustration for Priya Nair">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0F2C59"/>
+      <stop offset="100%" stop-color="#0891B2"/>
+    </linearGradient>
+  </defs>
+  <rect width="200" height="200" fill="url(#bg)"/>
+  <path d="M0,146 C35,130 70,162 105,146 C140,130 165,156 200,142 L200,200 L0,200 Z" fill="rgba(255,255,255,0.10)"/>
+  <path d="M0,163 C35,149 70,179 105,163 C140,147 165,169 200,157 L200,200 L0,200 Z" fill="rgba(255,255,255,0.14)"/>
+  <text x="100" y="102" font-family="Georgia, 'Times New Roman', serif" font-size="64" font-weight="700" fill="#FFFFFF" text-anchor="middle">PN</text>
+</svg>

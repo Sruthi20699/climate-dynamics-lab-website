@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 240" role="img" aria-label="Illustration of two joining circles, representing new lab members">
+  <defs>
+    <linearGradient id="ng6" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0A1F3F"/>
+      <stop offset="100%" stop-color="#005691"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="240" fill="url(#ng6)"/>
+  <circle cx="175" cy="110" r="46" fill="#2C7BB0" opacity="0.85"/>
+  <circle cx="235" cy="110" r="46" fill="#0891B2" opacity="0.85"/>
+  <text x="163" y="122" font-family="Georgia, 'Times New Roman', serif" font-size="30" font-weight="700" fill="#FFFFFF" text-anchor="middle">AO</text>
+  <text x="247" y="122" font-family="Georgia, 'Times New Roman', serif" font-size="30" font-weight="700" fill="#FFFFFF" text-anchor="middle">WL</text>
+  <path d="M0,190 C50,178 100,200 150,190 C200,180 250,202 300,190 C340,180 370,192 400,187 L400,240 L0,240 Z" fill="rgba(255,255,255,0.08)"/>
+</svg>

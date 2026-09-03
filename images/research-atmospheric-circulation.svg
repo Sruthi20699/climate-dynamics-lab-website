@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 380" role="img" aria-label="Illustration of jet stream circulation patterns">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0A1F3F"/>
+      <stop offset="100%" stop-color="#0F2C59"/>
+    </linearGradient>
+    <linearGradient id="jet" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#9FC1E0"/>
+      <stop offset="50%" stop-color="#2C7BB0"/>
+      <stop offset="100%" stop-color="#9FC1E0"/>
+    </linearGradient>
+  </defs>
+  <rect width="560" height="380" fill="url(#sky)"/>
+  <circle cx="440" cy="120" r="130" fill="none" stroke="#FFFFFF" stroke-opacity="0.08" stroke-width="1"/>
+  <circle cx="440" cy="120" r="90" fill="none" stroke="#FFFFFF" stroke-opacity="0.08" stroke-width="1"/>
+  <path d="M-20,90 C60,40 120,140 200,90 C280,40 340,140 420,90 C480,55 540,95 580,80"
+        fill="none" stroke="url(#jet)" stroke-width="10" stroke-linecap="round"/>
+  <path d="M-20,180 C60,220 120,150 200,190 C280,230 340,150 420,190 C480,215 540,185 580,195"
+        fill="none" stroke="#005691" stroke-opacity="0.6" stroke-width="6" stroke-linecap="round"/>
+  <path d="M0,300 C70,275 140,315 210,300 C280,285 350,320 420,300 C490,282 530,305 560,296 L560,380 L0,380 Z" fill="rgba(255,255,255,0.06)"/>
+  <path d="M0,325 C70,305 140,340 210,325 C280,310 350,338 420,325 C490,312 530,330 560,323 L560,380 L0,380 Z" fill="rgba(255,255,255,0.10)"/>
+</svg>

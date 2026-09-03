@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 240" role="img" aria-label="Illustration of jet stream circulation, representing new published research">
+  <defs>
+    <linearGradient id="ng1" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0A1F3F"/>
+      <stop offset="100%" stop-color="#0F2C59"/>
+    </linearGradient>
+    <linearGradient id="jet2" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#9FC1E0"/>
+      <stop offset="50%" stop-color="#2C7BB0"/>
+      <stop offset="100%" stop-color="#9FC1E0"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="240" fill="url(#ng1)"/>
+  <path d="M-10,70 C50,40 90,100 150,70 C210,40 250,100 310,70 C350,50 380,72 410,64"
+        fill="none" stroke="url(#jet2)" stroke-width="8" stroke-linecap="round"/>
+  <path d="M-10,120 C50,145 90,105 150,125 C210,145 250,105 310,125 C350,138 380,120 410,128"
+        fill="none" stroke="#005691" stroke-opacity="0.6" stroke-width="5" stroke-linecap="round"/>
+  <path d="M0,190 C50,175 100,200 150,190 C200,180 250,203 300,190 C340,180 370,193 400,187 L400,240 L0,240 Z" fill="rgba(255,255,255,0.08)"/>
+</svg>

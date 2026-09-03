@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Research | Climate Dynamics Lab</title>
+  <meta name="description" content="Research programs of the Climate Dynamics Lab spanning atmospheric circulation, ocean-climate interaction, modeling, extreme events, and machine learning for climate science." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Source+Serif+4:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">
+        <a href="index.html" class="brand-link">
+          <span class="brand-title">Climate Dynamics Lab</span>
+          <span class="brand-subtitle">Dept. of Earth &amp; Atmospheric Sciences · Northfield University</span>
+        </a>
+      </div>
+
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="primaryNav">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="primary-nav" id="primaryNav" aria-label="Primary">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="people.html">People</a></li>
+          <li><a href="research.html" class="active">Research</a></li>
+          <li><a href="publications.html">Publications</a></li>
+          <li><a href="highlights.html">Highlights</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <section class="page-hero">
+      <svg class="gyre-decoration" viewBox="0 0 200 200" aria-hidden="true" focusable="false">
+        <circle class="gyre-ring gyre-ring-outer" cx="100" cy="100" r="90" />
+        <circle class="gyre-ring gyre-ring-inner" cx="100" cy="100" r="62" />
+      </svg>
+      <div class="container">
+        <p class="hero-eyebrow">What We Study</p>
+        <h1>Research</h1>
+        <p class="page-hero-subtitle">Physical mechanisms of climate variability, from theory to observation</p>
+      </div>
+      <div class="hero-waves" aria-hidden="true">
+        <div class="wave-track wave-track-back">
+          <svg viewBox="0 0 1440 120" preserveAspectRatio="none"><path d="M0,32L48,42.7C96,53,192,75,288,74.7C384,75,480,53,576,48C672,43,768,53,864,64C960,75,1056,85,1152,80C1248,75,1344,53,1392,42.7L1440,32L1440,120L0,120Z"></path></svg>
+          <svg viewBox="0 0 1440 120" preserveAspectRatio="none"><path d="M0,32L48,42.7C96,53,192,75,288,74.7C384,75,480,53,576,48C672,43,768,53,864,64C960,75,1056,85,1152,80C1248,75,1344,53,1392,42.7L1440,32L1440,120L0,120Z"></path></svg>
+        </div>
+        <div class="wave-track wave-track-front">
+          <svg viewBox="0 0 1440 120" preserveAspectRatio="none"><path d="M0,64L48,58.7C96,53,192,43,288,48C384,53,480,75,576,80C672,85,768,75,864,64C960,53,1056,43,1152,48C1248,53,1344,75,1392,85.3L1440,96L1440,120L0,120Z"></path></svg>
+          <svg viewBox="0 0 1440 120" preserveAspectRatio="none"><path d="M0,64L48,58.7C96,53,192,43,288,48C384,53,480,75,576,80C672,85,768,75,864,64C960,53,1056,43,1152,48C1248,53,1344,75,1392,85.3L1440,96L1440,120L0,120Z"></path></svg>
+        </div>
+      </div>
+    </section>
+
+    <div class="container">
+
+      <p class="research-intro">
+        Our research spans a range of spatial and temporal scales, unified by a common goal:
+        understanding the physical mechanisms that govern climate variability and change. We use
+        a hierarchy of approaches &mdash; idealized theory, numerical modeling, and observational
+        analysis &mdash; to address questions relevant to both fundamental science and societal impact.
+      </p>
+
+      <!-- ===== Research Area 1 ===== -->
+      <section class="research-detail reveal" aria-labelledby="area-1-heading">
+        <img src="images/research-atmospheric-circulation.svg" alt="Illustration of jet stream circulation patterns" loading="lazy" />
+        <div class="research-detail-content">
+          <h2 id="area-1-heading">Atmospheric Circulation</h2>
+          <p>
+            We study the dynamics of jet streams, storm tracks, and planetary-scale waves, and how
+            these features respond to radiative forcing. Current projects examine how a warming
+            Arctic reshapes midlatitude circulation and the frequency of atmospheric blocking events.
+          </p>
+          <ul class="research-features">
+            <li>Jet stream variability &amp; midlatitude dynamics</li>
+            <li>Atmospheric blocking &amp; persistent weather regimes</li>
+            <li>Arctic&ndash;midlatitude teleconnections</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- ===== Research Area 2 (reversed) ===== -->
+      <section class="research-detail reverse reveal" aria-labelledby="area-2-heading">
+        <img src="images/research-ocean-climate.svg" alt="Illustration of ocean circulation and air-sea interaction" loading="lazy" />
+        <div class="research-detail-content">
+          <h2 id="area-2-heading">Ocean&ndash;Climate Interaction</h2>
+          <p>
+            The ocean stores and redistributes vast amounts of heat, shaping climate on seasonal
+            to multi-decadal timescales. We investigate how variability modes such as ENSO and the
+            Atlantic Meridional Overturning Circulation influence regional and global climate.
+          </p>
+          <ul class="research-features">
+            <li>ENSO dynamics &amp; global teleconnections</li>
+            <li>Ocean heat transport &amp; meridional overturning circulation</li>
+            <li>Air&ndash;sea coupling &amp; feedback mechanisms</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- ===== Research Area 3 ===== -->
+      <section class="research-detail reveal" aria-labelledby="area-3-heading">
+        <img src="images/research-climate-modeling.svg" alt="Illustration of a global climate model grid" loading="lazy" />
+        <div class="research-detail-content">
+          <h2 id="area-3-heading">Climate Modeling &amp; Prediction</h2>
+          <p>
+            We develop and evaluate numerical models spanning idealized dynamical cores to
+            comprehensive Earth system models, with a focus on improving seasonal-to-decadal
+            predictability and reducing model biases in circulation and precipitation.
+          </p>
+          <ul class="research-features">
+            <li>Model evaluation &amp; bias diagnosis</li>
+            <li>Seasonal-to-decadal predictability</li>
+            <li>Idealized dynamical core experiments</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- ===== Research Area 4 (reversed) ===== -->
+      <section class="research-detail reverse reveal" aria-labelledby="area-4-heading">
+        <img src="images/research-extreme-events.svg" alt="Illustration of an extreme storm system" loading="lazy" />
+        <div class="research-detail-content">
+          <h2 id="area-4-heading">Extreme Events</h2>
+          <p>
+            Heatwaves, droughts, and extreme precipitation events are becoming more frequent and
+            intense under climate change. We study the dynamical and thermodynamical drivers of
+            these extremes to improve understanding of their changing statistics.
+          </p>
+          <ul class="research-features">
+            <li>Heatwave dynamics &amp; attribution</li>
+            <li>Drought persistence &amp; land&ndash;atmosphere feedbacks</li>
+            <li>Extreme precipitation under warming</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- ===== Research Area 5 ===== -->
+      <section class="research-detail reveal" aria-labelledby="area-5-heading">
+        <img src="images/research-machine-learning.svg" alt="Illustration of a neural network overlaid on climate data" loading="lazy" />
+        <div class="research-detail-content">
+          <h2 id="area-5-heading">Machine Learning for Climate</h2>
+          <p>
+            We apply data-driven and machine learning methods to accelerate climate model emulation,
+            detect patterns in large observational and model datasets, and improve statistical
+            downscaling of climate projections.
+          </p>
+          <ul class="research-features">
+            <li>Climate model emulation</li>
+            <li>Pattern detection in high-dimensional climate data</li>
+            <li>Statistical &amp; ML-based downscaling</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- ===== Current Projects & Funding ===== -->
+      <section class="funding-section" aria-labelledby="funding-heading">
+        <div class="section-heading">
+          <h2 id="funding-heading">Current Funded Projects</h2>
+          <p>Active research supported by federal and institutional grants</p>
+        </div>
+        <ul class="funding-list">
+          <li>
+            <div class="funding-title">Ocean&ndash;Atmosphere Coupling and Decadal Climate Prediction</div>
+            <div class="funding-meta">National Science Foundation &middot; 2026&ndash;2029</div>
+          </li>
+          <li>
+            <div class="funding-title">Machine Learning Emulation of Regional Climate Extremes</div>
+            <div class="funding-meta">NOAA Climate Program Office &middot; 2025&ndash;2028</div>
+          </li>
+          <li>
+            <div class="funding-title">Arctic Amplification and Midlatitude Weather Persistence</div>
+            <div class="funding-meta">NASA Earth Science Division &middot; 2024&ndash;2027</div>
+          </li>
+        </ul>
+      </section>
+
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-col footer-about">
+        <h3>Climate Dynamics Lab</h3>
+        <p>Department of Earth &amp; Atmospheric Sciences<br />Northfield University</p>
+        <p>123 Science Drive, Northfield, ST 00000</p>
+      </div>
+      <div class="footer-col footer-nav">
+        <h3>Navigate</h3>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="people.html">People</a></li>
+          <li><a href="research.html">Research</a></li>
+          <li><a href="publications.html">Publications</a></li>
+          <li><a href="highlights.html">Highlights</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col footer-contact">
+        <h3>Contact</h3>
+        <p><a href="mailto:climatedynamicslab@northfield.edu">climatedynamicslab@northfield.edu</a></p>
+        <p>+1 (555) 012-3456</p>
+        <p>Science Hall, Room 300</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <p>&copy; 2026 Climate Dynamics Lab, Northfield University. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js" defer></script>
+</body>
+</html>

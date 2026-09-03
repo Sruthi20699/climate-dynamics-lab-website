@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 240" role="img" aria-label="Illustration of ocean waves with an upward trend line, representing new grant funding">
+  <defs>
+    <linearGradient id="ng3" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0A1F3F"/>
+      <stop offset="100%" stop-color="#005691"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="240" fill="url(#ng3)"/>
+  <polyline points="40,160 110,130 170,150 240,90 300,105 360,55" fill="none" stroke="#9FC1E0" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <g fill="#FFFFFF">
+    <circle cx="40" cy="160" r="4"/>
+    <circle cx="110" cy="130" r="4"/>
+    <circle cx="170" cy="150" r="4"/>
+    <circle cx="240" cy="90" r="4"/>
+    <circle cx="300" cy="105" r="4"/>
+    <circle cx="360" cy="55" r="5"/>
+  </g>
+  <path d="M340,45 l25,5 l-8,24" fill="none" stroke="#9FC1E0" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M0,190 C50,175 100,200 150,190 C200,180 250,203 300,190 C340,180 370,193 400,187 L400,240 L0,240 Z" fill="rgba(255,255,255,0.10)"/>
+  <path d="M0,210 C50,198 100,218 150,210 C200,202 250,220 300,210 C340,203 370,213 400,208 L400,240 L0,240 Z" fill="rgba(255,255,255,0.14)"/>
+</svg>

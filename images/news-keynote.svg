@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 240" role="img" aria-label="Illustration of a speaker at a podium, representing a keynote presentation">
+  <defs>
+    <linearGradient id="ng5" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0F2C59"/>
+      <stop offset="100%" stop-color="#0A1F3F"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="240" fill="url(#ng5)"/>
+  <g stroke="#9FC1E0" stroke-opacity="0.5" stroke-width="2" fill="none">
+    <path d="M200,120 a40,40 0 0 1 40,-40"/>
+    <path d="M200,120 a60,60 0 0 1 60,-60"/>
+    <path d="M200,120 a80,80 0 0 1 80,-80"/>
+  </g>
+  <rect x="175" y="150" width="50" height="55" rx="4" fill="#2C7BB0"/>
+  <circle cx="200" cy="120" r="18" fill="#9FC1E0"/>
+  <rect x="192" y="138" width="16" height="18" fill="#9FC1E0"/>
+  <path d="M0,190 C50,178 100,200 150,190 C200,180 250,202 300,190 C340,180 370,192 400,187 L400,240 L0,240 Z" fill="rgba(255,255,255,0.08)"/>
+</svg>

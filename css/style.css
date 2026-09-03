@@ -1,0 +1,1448 @@
+/* ==========================================================================
+   Climate Dynamics Lab — Base Stylesheet
+   ========================================================================== */
+
+/* ---------- 1. CSS Variables & Palette ---------- */
+:root {
+  /* Color palette */
+  --color-navy: #0F2C59;
+  --color-navy-dark: #0A1F3F;
+  --color-accent: #005691;
+  --color-accent-light: #2C7BB0;
+  --color-bg: #F8F9FA;
+  --color-bg-alt: #FFFFFF;
+  --color-text: #1E1E1E;
+  --color-text-muted: #5A6472;
+  --color-border: #E1E5EA;
+  --color-white: #FFFFFF;
+
+  /* Typography */
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-heading: 'Source Serif 4', Georgia, 'Times New Roman', serif;
+
+  /* Layout */
+  --max-width: 1180px;
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --shadow-sm: 0 1px 3px rgba(15, 44, 89, 0.08);
+  --shadow-md: 0 6px 20px rgba(15, 44, 89, 0.10);
+  --shadow-lg: 0 16px 40px rgba(15, 44, 89, 0.16);
+  --transition: 0.2s ease-in-out;
+}
+
+/* ---------- 2. Reset & Base ---------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  color: var(--color-text);
+  background-color: var(--color-bg);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  overflow-wrap: anywhere;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-heading);
+  color: var(--color-navy);
+  line-height: 1.25;
+  margin: 0 0 0.6em;
+}
+
+p {
+  margin: 0 0 1em;
+  color: var(--color-text);
+}
+
+.container {
+  width: 100%;
+  max-width: var(--max-width);
+  margin-inline: auto;
+  padding-inline: 24px;
+}
+
+/* ---------- 3. Scroll-Reveal Utility ----------
+   Deliberately placed early in the cascade: it shares transform/opacity
+   with several component :hover rules below at equal specificity
+   (.reveal.in-view vs. e.g. .theme-card:hover), and CSS resolves ties by
+   source order. Keeping this block first lets those later, more specific
+   hover states win instead of being cancelled by the resting reveal state. */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.reveal.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Light stagger so grid items settle into place one after another rather
+   than all at once — reused across every card grid on the site. */
+.reveal:nth-child(1) { transition-delay: 0.05s; }
+.reveal:nth-child(2) { transition-delay: 0.12s; }
+.reveal:nth-child(3) { transition-delay: 0.19s; }
+.reveal:nth-child(4) { transition-delay: 0.26s; }
+.reveal:nth-child(5) { transition-delay: 0.33s; }
+.reveal:nth-child(6) { transition-delay: 0.4s; }
+
+/* ---------- 4. Buttons ---------- */
+.btn {
+  display: inline-block;
+  padding: 12px 26px;
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+  font-size: 0.95rem;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: transform var(--transition), box-shadow var(--transition), background-color var(--transition), color var(--transition);
+}
+
+.btn-primary {
+  background-color: var(--color-white);
+  color: var(--color-navy);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.btn-outline {
+  background-color: transparent;
+  color: var(--color-white);
+  border-color: rgba(255, 255, 255, 0.6);
+}
+
+.btn-outline:hover {
+  background-color: rgba(255, 255, 255, 0.12);
+  border-color: var(--color-white);
+  transform: translateY(-2px);
+}
+
+.btn-accent {
+  background-color: var(--color-accent);
+  color: var(--color-white);
+  white-space: nowrap;
+}
+
+.btn-accent:hover {
+  background-color: var(--color-accent-light);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-sm);
+}
+
+/* ---------- 5. Header & Navigation ---------- */
+.site-header {
+  background-color: var(--color-white);
+  border-bottom: 1px solid var(--color-border);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-block: 14px;
+  gap: 24px;
+}
+
+.brand-link {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+}
+
+.brand-title {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 1.3rem;
+  color: var(--color-navy);
+}
+
+.brand-subtitle {
+  font-size: 0.78rem;
+  color: var(--color-text-muted);
+  margin-top: 2px;
+}
+
+.primary-nav ul {
+  display: flex;
+  gap: 4px;
+}
+
+.primary-nav a {
+  display: inline-block;
+  padding: 10px 14px;
+  font-weight: 500;
+  font-size: 0.95rem;
+  color: var(--color-navy);
+  border-radius: var(--radius-sm);
+  position: relative;
+  transition: color var(--transition), background-color var(--transition);
+}
+
+.primary-nav a::after {
+  content: '';
+  position: absolute;
+  left: 14px;
+  right: 14px;
+  bottom: 6px;
+  height: 2px;
+  background-color: var(--color-accent);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform var(--transition);
+}
+
+.primary-nav a:hover,
+.primary-nav a:focus-visible {
+  color: var(--color-accent);
+  background-color: rgba(0, 86, 145, 0.06);
+}
+
+.primary-nav a:hover::after,
+.primary-nav a.active::after {
+  transform: scaleX(1);
+}
+
+.primary-nav a.active {
+  color: var(--color-accent);
+  font-weight: 600;
+}
+
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 40px;
+  height: 40px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.nav-toggle span {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: var(--color-navy);
+  border-radius: 2px;
+  transition: transform var(--transition), opacity var(--transition);
+}
+
+/* ---------- 6. Hero Banner ---------- */
+.hero {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, var(--color-navy) 0%, var(--color-navy-dark) 100%);
+  color: var(--color-white);
+  padding-block: 88px 116px;
+}
+
+.hero-grid {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  align-items: center;
+  gap: 32px;
+}
+
+.hero-text {
+  max-width: 620px;
+}
+
+.hero-visual {
+  display: flex;
+  justify-content: center;
+}
+
+.hero-visual img {
+  width: 100%;
+  max-width: 420px;
+  aspect-ratio: 1 / 1;
+}
+
+/* ----- Ocean current / gyre motif -----
+   A slowly rotating dashed double-ring, evoking the layered rotation of an
+   ocean gyre, plus a looping wave-current divider at the base of every
+   hero banner. Both are purely decorative (aria-hidden) and pause under
+   prefers-reduced-motion, see section 21. */
+.gyre-decoration {
+  position: absolute;
+  top: -60px;
+  right: -60px;
+  width: 300px;
+  height: 300px;
+  z-index: 1;
+  opacity: 0.16;
+  pointer-events: none;
+}
+
+.gyre-ring {
+  fill: none;
+  stroke: var(--color-white);
+  stroke-width: 1.5;
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+.gyre-ring-outer {
+  stroke-dasharray: 6 16;
+  animation: gyre-spin 90s linear infinite;
+}
+
+.gyre-ring-inner {
+  stroke-dasharray: 3 11;
+  animation: gyre-spin-reverse 55s linear infinite;
+}
+
+@keyframes gyre-spin {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes gyre-spin-reverse {
+  to { transform: rotate(-360deg); }
+}
+
+.hero-waves {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -2px;
+  height: 80px;
+  z-index: 1;
+  overflow: hidden;
+  line-height: 0;
+  pointer-events: none;
+}
+
+.wave-track {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  width: 200%;
+  height: 100%;
+  animation: wave-flow 24s linear infinite;
+  will-change: transform;
+}
+
+.wave-track svg {
+  width: 50%;
+  height: 100%;
+  flex-shrink: 0;
+  display: block;
+}
+
+.wave-track-back {
+  opacity: 0.5;
+  animation-duration: 30s;
+}
+
+.wave-track-back path {
+  fill: rgba(255, 255, 255, 0.08);
+}
+
+.wave-track-front {
+  animation-duration: 17s;
+  animation-direction: reverse;
+}
+
+.wave-track-front path {
+  fill: var(--color-bg);
+}
+
+@keyframes wave-flow {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+.hero-eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #9FC1E0;
+  margin-bottom: 14px;
+}
+
+.hero-title {
+  color: var(--color-white);
+  font-size: clamp(2rem, 4vw, 3rem);
+  margin-bottom: 0.4em;
+}
+
+.hero-subtitle {
+  font-size: 1.15rem;
+  font-weight: 500;
+  color: #D7E5F2;
+  margin-bottom: 20px;
+}
+
+.hero-intro {
+  color: #C9D9E8;
+  font-size: 1.02rem;
+  max-width: 680px;
+  margin-bottom: 32px;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+/* ---------- 7. Announcement Box ---------- */
+.announcement {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  background-color: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-left: 5px solid var(--color-accent);
+  border-radius: var(--radius-md);
+  padding: 28px 32px;
+  margin-top: -48px;
+  margin-bottom: 72px;
+  box-shadow: var(--shadow-lg);
+  position: relative;
+  z-index: 2;
+}
+
+.announcement-icon {
+  font-size: 2.2rem;
+  flex-shrink: 0;
+}
+
+.announcement-content {
+  flex: 1;
+}
+
+.announcement-content h2 {
+  font-size: 1.3rem;
+  margin-bottom: 6px;
+}
+
+.announcement-content p {
+  margin: 0;
+  color: var(--color-text-muted);
+}
+
+.announcement-action {
+  flex-shrink: 0;
+}
+
+/* ---------- 8. Section Heading (shared) ---------- */
+.section-heading {
+  text-align: center;
+  max-width: 640px;
+  margin: 0 auto 44px;
+}
+
+.section-heading h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.section-heading p {
+  color: var(--color-text-muted);
+  margin: 0;
+}
+
+/* Animated "current" underline — a small nod to flowing water beneath
+   every section heading, tying the theme together site-wide. */
+.section-heading h2::after,
+.mission h2::after {
+  content: '';
+  display: block;
+  width: 64px;
+  height: 3px;
+  margin: 14px auto 0;
+  border-radius: 2px;
+  background: linear-gradient(90deg, var(--color-accent), var(--color-navy) 45%, var(--color-accent));
+  background-size: 220% 100%;
+  animation: current-flow 5s linear infinite;
+}
+
+.mission h2::after {
+  background: linear-gradient(90deg, #9FC1E0, var(--color-white) 45%, #9FC1E0);
+  background-size: 220% 100%;
+}
+
+@keyframes current-flow {
+  0% { background-position: 0% 0; }
+  100% { background-position: -220% 0; }
+}
+
+/* ---------- 9. Lead Researcher Profile ---------- */
+.profile-section {
+  margin-bottom: 88px;
+}
+
+.profile-grid {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 48px;
+  align-items: start;
+  background-color: var(--color-bg-alt);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 40px;
+}
+
+.profile-image-wrap {
+  display: flex;
+  justify-content: center;
+}
+
+.profile-image {
+  width: 100%;
+  max-width: 260px;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 6px solid var(--color-bg);
+  box-shadow: var(--shadow-md);
+}
+
+.profile-eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--color-accent);
+  margin-bottom: 8px;
+}
+
+.profile-content h2 {
+  font-size: 1.9rem;
+  margin-bottom: 6px;
+}
+
+.profile-titles {
+  color: var(--color-text-muted);
+  font-weight: 500;
+  font-size: 0.95rem;
+  margin-bottom: 18px;
+}
+
+.profile-subheading {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--color-navy);
+  margin-bottom: 12px;
+}
+
+.profile-domains {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px 24px;
+  margin-bottom: 24px;
+}
+
+.profile-domains li {
+  position: relative;
+  padding-left: 22px;
+  color: var(--color-text);
+}
+
+.profile-domains li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 9px;
+  width: 8px;
+  height: 8px;
+  background-color: var(--color-accent);
+  border-radius: 50%;
+}
+
+.profile-link {
+  display: inline-block;
+  font-weight: 600;
+  color: var(--color-accent);
+  border-bottom: 2px solid transparent;
+  transition: border-color var(--transition), color var(--transition);
+}
+
+.profile-link:hover {
+  border-color: var(--color-accent);
+  color: var(--color-navy);
+}
+
+/* ---------- 10. Mission Statement ---------- */
+.mission {
+  background-color: var(--color-navy);
+  color: var(--color-white);
+  border-radius: var(--radius-lg);
+  padding: 56px 40px;
+  margin-bottom: 88px;
+  text-align: center;
+}
+
+.mission h2 {
+  color: var(--color-white);
+  font-size: 2rem;
+}
+
+.mission > p {
+  max-width: 720px;
+  margin: 0 auto 40px;
+  color: #D7E5F2;
+  font-size: 1.05rem;
+}
+
+.mission-points {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  text-align: left;
+}
+
+.mission-point {
+  background-color: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: var(--radius-md);
+  padding: 24px;
+  transition: background-color var(--transition), transform var(--transition);
+}
+
+.mission-point:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  transform: translateY(-4px);
+}
+
+.mission-point h3 {
+  color: var(--color-white);
+  font-size: 1.1rem;
+  margin-bottom: 8px;
+}
+
+.mission-point p {
+  color: #C9D9E8;
+  font-size: 0.92rem;
+  margin: 0;
+}
+
+/* ---------- 11. Research Themes Grid ---------- */
+.research-themes {
+  margin-bottom: 88px;
+}
+
+.themes-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+.theme-card {
+  background-color: var(--color-bg-alt);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 32px 28px;
+  transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+}
+
+.theme-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--color-accent);
+}
+
+.theme-icon {
+  font-size: 2rem;
+  margin-bottom: 16px;
+  display: inline-block;
+}
+
+.theme-card:hover .theme-icon {
+  animation: icon-bob 1.6s ease-in-out infinite;
+}
+
+@keyframes icon-bob {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+
+.theme-card h3 {
+  font-size: 1.15rem;
+  margin-bottom: 10px;
+}
+
+.theme-card p {
+  color: var(--color-text-muted);
+  font-size: 0.94rem;
+  margin: 0;
+}
+
+/* ---------- 12. Latest News & Highlights Grid ---------- */
+.news-section {
+  margin-bottom: 96px;
+}
+
+.news-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+.news-card {
+  background-color: var(--color-bg-alt);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.news-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-md);
+}
+
+.news-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.news-content {
+  padding: 22px 24px 26px;
+}
+
+.news-date {
+  display: inline-block;
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--color-accent);
+  margin-bottom: 10px;
+}
+
+.news-content h3 {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+}
+
+.news-content p {
+  color: var(--color-text-muted);
+  font-size: 0.92rem;
+  margin-bottom: 14px;
+}
+
+.news-link {
+  font-weight: 600;
+  color: var(--color-accent);
+  font-size: 0.9rem;
+  transition: color var(--transition);
+}
+
+.news-link:hover {
+  color: var(--color-navy);
+}
+
+/* ---------- 13. Footer ---------- */
+.site-footer {
+  background-color: var(--color-navy-dark);
+  color: #C9D9E8;
+}
+
+.footer-inner {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 40px;
+  padding-block: 56px;
+}
+
+.footer-col h3 {
+  color: var(--color-white);
+  font-size: 1.05rem;
+  margin-bottom: 16px;
+}
+
+.footer-col p {
+  color: #A9C0D6;
+  font-size: 0.92rem;
+  margin-bottom: 8px;
+}
+
+.footer-col a {
+  transition: color var(--transition);
+}
+
+.footer-col a:hover {
+  color: var(--color-white);
+}
+
+.footer-nav ul li {
+  margin-bottom: 10px;
+}
+
+.footer-nav ul a {
+  color: #A9C0D6;
+  font-size: 0.92rem;
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  padding-block: 20px;
+}
+
+.footer-bottom p {
+  margin: 0;
+  font-size: 0.82rem;
+  color: #8CA6BE;
+  text-align: center;
+}
+
+/* ---------- 14. Inner Page Hero ---------- */
+.page-hero {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, var(--color-navy) 0%, var(--color-navy-dark) 100%);
+  color: var(--color-white);
+  padding-block: 56px 88px;
+  text-align: center;
+}
+
+.page-hero > .container {
+  position: relative;
+  z-index: 2;
+}
+
+.page-hero h1 {
+  color: var(--color-white);
+  font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+  margin-bottom: 0.3em;
+}
+
+.page-hero-subtitle {
+  color: #D7E5F2;
+  font-size: 1.05rem;
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.btn-outline-dark {
+  background-color: transparent;
+  color: var(--color-navy);
+  border-color: var(--color-navy);
+}
+
+.btn-outline-dark:hover {
+  background-color: var(--color-navy);
+  color: var(--color-white);
+  transform: translateY(-2px);
+}
+
+/* ---------- 15. People: Team & Member Cards ---------- */
+.team-section {
+  margin-bottom: 72px;
+}
+
+.member-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 28px;
+}
+
+.member-card {
+  background-color: var(--color-bg-alt);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 28px 24px;
+  text-align: center;
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.member-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-md);
+}
+
+.member-photo {
+  width: 130px;
+  height: 130px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin: 0 auto 18px;
+  border: 4px solid var(--color-bg);
+  box-shadow: var(--shadow-sm);
+}
+
+.member-card h3 {
+  font-size: 1.1rem;
+  margin-bottom: 4px;
+}
+
+.member-role {
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--color-accent);
+  margin-bottom: 12px;
+}
+
+.member-bio {
+  color: var(--color-text-muted);
+  font-size: 0.9rem;
+  margin-bottom: 16px;
+}
+
+.member-links {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+}
+
+.member-links a {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--color-accent);
+  border-bottom: 2px solid transparent;
+  transition: border-color var(--transition);
+}
+
+.member-links a:hover {
+  border-color: var(--color-accent);
+}
+
+.alumni-section {
+  margin-bottom: 40px;
+}
+
+.alumni-list {
+  border-top: 1px solid var(--color-border);
+}
+
+.alumni-list li {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 18px 4px;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.alumni-name {
+  font-weight: 700;
+  color: var(--color-navy);
+}
+
+.alumni-detail {
+  color: var(--color-text-muted);
+  font-size: 0.92rem;
+}
+
+/* ---------- 16. Research Page: Detail Rows ---------- */
+.research-intro {
+  max-width: 780px;
+  font-size: 1.05rem;
+  color: var(--color-text-muted);
+  margin: 56px auto 64px;
+  text-align: center;
+}
+
+.research-detail {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: center;
+  margin-bottom: 72px;
+}
+
+.research-detail img {
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  width: 100%;
+}
+
+.research-detail.reverse img {
+  order: 2;
+}
+
+.research-detail-content h2 {
+  font-size: 1.6rem;
+}
+
+.research-features li {
+  position: relative;
+  padding-left: 22px;
+  margin-bottom: 10px;
+  color: var(--color-text);
+}
+
+.research-features li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 9px;
+  width: 8px;
+  height: 8px;
+  background-color: var(--color-accent);
+  border-radius: 50%;
+}
+
+.funding-section {
+  margin-bottom: 88px;
+}
+
+.funding-list {
+  border-top: 1px solid var(--color-border);
+}
+
+.funding-list li {
+  padding: 20px 4px;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.funding-title {
+  font-weight: 700;
+  color: var(--color-navy);
+  margin-bottom: 4px;
+}
+
+.funding-meta {
+  color: var(--color-text-muted);
+  font-size: 0.9rem;
+}
+
+/* ---------- 17. Publications ---------- */
+.pub-year {
+  margin-bottom: 56px;
+}
+
+.pub-year:first-of-type {
+  margin-top: 56px;
+}
+
+.pub-year h2 {
+  border-bottom: 2px solid var(--color-border);
+  padding-bottom: 12px;
+  margin-bottom: 8px;
+  font-size: 1.6rem;
+}
+
+.pub-item {
+  padding: 22px 0;
+  border-bottom: 1px solid var(--color-border);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+}
+
+.pub-item:last-child {
+  border-bottom: none;
+}
+
+.pub-citation {
+  margin: 0;
+  flex: 1 1 480px;
+  line-height: 1.6;
+}
+
+.pub-links {
+  display: flex;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+.pub-links a {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--color-accent);
+  border: 1.5px solid var(--color-accent);
+  padding: 6px 14px;
+  border-radius: var(--radius-sm);
+  transition: background-color var(--transition), color var(--transition);
+}
+
+.pub-links a:hover {
+  background-color: var(--color-accent);
+  color: var(--color-white);
+}
+
+/* ---------- 18. Highlights: Load More ---------- */
+.news-more {
+  text-align: center;
+  margin-top: 40px;
+}
+
+/* ---------- 19. Contact Page ---------- */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 56px;
+  margin: 56px 0 48px;
+  align-items: start;
+}
+
+.contact-info {
+  background-color: var(--color-bg-alt);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 36px;
+}
+
+.contact-info h2,
+.contact-form h2 {
+  font-size: 1.4rem;
+  margin-bottom: 24px;
+}
+
+.contact-info-list li {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 26px;
+}
+
+.contact-info-list strong {
+  display: block;
+  color: var(--color-navy);
+  margin-bottom: 4px;
+}
+
+.contact-info-list p {
+  margin: 0;
+  color: var(--color-text-muted);
+}
+
+.contact-icon {
+  font-size: 1.3rem;
+  flex-shrink: 0;
+  line-height: 1.5;
+}
+
+.contact-form {
+  background-color: var(--color-bg-alt);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 36px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  font-weight: 600;
+  font-size: 0.9rem;
+  margin-bottom: 6px;
+  color: var(--color-navy);
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 11px 14px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  color: var(--color-text);
+  background-color: var(--color-bg);
+  transition: border-color var(--transition), box-shadow var(--transition);
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 3px rgba(0, 86, 145, 0.12);
+  background-color: var(--color-white);
+}
+
+.form-group textarea {
+  resize: vertical;
+}
+
+.map-wrap {
+  margin-bottom: 72px;
+}
+
+.map-wrap img {
+  border-radius: var(--radius-md);
+  width: 100%;
+  border: 1px solid var(--color-border);
+}
+
+/* ==========================================================================
+   20. Responsive Design (Mobile-first breakpoints)
+   ========================================================================== */
+
+/* Tablet and below */
+@media (max-width: 960px) {
+  .profile-grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+    padding: 32px 28px;
+  }
+
+  .profile-image-wrap {
+    margin-bottom: 8px;
+  }
+
+  .profile-domains {
+    grid-template-columns: 1fr;
+    text-align: left;
+    max-width: 320px;
+    margin-inline: auto;
+    margin-bottom: 24px;
+  }
+
+  .mission-points,
+  .themes-grid,
+  .news-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .footer-inner {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .footer-about {
+    grid-column: 1 / -1;
+  }
+
+  .research-detail {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .research-detail.reverse img {
+    order: 0;
+  }
+
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .hero-grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .hero-text {
+    max-width: none;
+    margin-inline: auto;
+  }
+
+  .hero-actions {
+    justify-content: center;
+  }
+
+  .hero-visual img {
+    max-width: 260px;
+  }
+}
+
+/* Collapsible nav — the horizontal link row plus the "Climate Dynamics
+   Lab" branding no longer fit side by side once the viewport drops below
+   roughly 1020px (verified: link text starts wrapping to a second line
+   right at that width), well above the 720px mobile-layout breakpoint
+   below. So the hamburger menu gets its own, wider breakpoint. */
+@media (max-width: 1080px) {
+  .nav-toggle {
+    display: flex;
+  }
+
+  .primary-nav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: var(--color-white);
+    border-bottom: 1px solid var(--color-border);
+    box-shadow: var(--shadow-md);
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height var(--transition);
+  }
+
+  .primary-nav.open {
+    max-height: 400px;
+  }
+
+  .primary-nav ul {
+    flex-direction: column;
+    padding: 8px 24px 16px;
+    gap: 0;
+  }
+
+  .primary-nav a {
+    display: block;
+    padding: 12px 8px;
+  }
+
+  .primary-nav a::after {
+    display: none;
+  }
+}
+
+/* Mobile single-column layouts */
+@media (max-width: 720px) {
+  .hero {
+    padding-block: 64px 72px;
+  }
+
+  .announcement {
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    margin-top: -32px;
+  }
+
+  .announcement-action {
+    width: 100%;
+  }
+
+  .announcement-action .btn {
+    width: 100%;
+    text-align: center;
+  }
+
+  .mission {
+    padding: 40px 24px;
+  }
+
+  .mission-points,
+  .themes-grid,
+  .news-grid,
+  .member-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-inner {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .page-hero {
+    padding-block: 48px 56px;
+  }
+
+  .alumni-list li {
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .pub-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .pub-citation {
+    flex-basis: auto;
+  }
+
+  .contact-form {
+    padding: 24px;
+  }
+}
+
+/* Small phones */
+@media (max-width: 420px) {
+  .hero-title {
+    font-size: 1.7rem;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+  }
+
+  .hero-actions .btn {
+    width: 100%;
+    text-align: center;
+  }
+
+  .brand-title {
+    font-size: 1.1rem;
+  }
+
+  .brand-subtitle {
+    font-size: 0.7rem;
+  }
+
+  .gyre-decoration {
+    width: 180px;
+    height: 180px;
+    top: -30px;
+    right: -30px;
+  }
+}
+
+/* ==========================================================================
+   21. Reduced Motion
+   ========================================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .wave-track,
+  .gyre-ring-outer,
+  .gyre-ring-inner,
+  .section-heading h2::after,
+  .mission h2::after,
+  .theme-card:hover .theme-icon {
+    animation: none !important;
+  }
+
+  .reveal {
+    transition: none;
+    opacity: 1;
+    transform: none;
+  }
+
+  .theme-card:hover,
+  .news-card:hover,
+  .member-card:hover,
+  .mission-point:hover,
+  .btn:hover,
+  .btn-primary:hover,
+  .btn-outline:hover,
+  .btn-outline-dark:hover,
+  .btn-accent:hover {
+    transform: none;
+  }
+}
