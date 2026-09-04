@@ -4,6 +4,76 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Content Manager | Climate Dynamics Lab</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    /* Re-theme Decap CMS's chrome to match the Climate Dynamics Lab brand.
+       Decap's internal styles are CSS-in-JS (emotion) with a hashed class
+       prefix, but the descriptive component name survives as a stable
+       substring (e.g. "css-a1b2c3-LoginButton") — matched here via
+       attribute selectors so this keeps working across Decap version
+       bumps even though the hash itself changes. !important is needed
+       because emotion's own rules are injected with unpredictable order
+       relative to this stylesheet. */
+    #nc-root, body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    }
+    #nc-root h1,
+    #nc-root h2,
+    #nc-root h3 {
+      font-family: 'Source Serif 4', Georgia, 'Times New Roman', serif !important;
+    }
+
+    /* Login screen */
+    [class*="StyledAuthenticationPage"] {
+      background: linear-gradient(135deg, #0F2C59 0%, #0A1F3F 100%) !important;
+    }
+    img[alt="Logo"] {
+      max-width: 96px;
+      max-height: 96px;
+      border-radius: 18px;
+    }
+    [class*="IconWrapper-DecapLogoIcon"] svg {
+      display: none;
+    }
+    [class*="LoginButton"] {
+      background-color: #005691 !important;
+      transition: background-color 0.2s ease-in-out;
+    }
+    [class*="LoginButton"]:hover {
+      background-color: #2C7BB0 !important;
+    }
+
+    /* Top app header */
+    header[class*="AppHeader"] {
+      background-color: #0F2C59 !important;
+    }
+    [class*="AppHeaderLink"],
+    [class*="AppHeaderButton"] {
+      color: #FFFFFF !important;
+    }
+
+    /* Sidebar collection navigation */
+    [class*="sidebarNavLinkActive"] {
+      color: #005691 !important;
+      border-color: #005691 !important;
+    }
+    [class*="SidebarNavLink"]:hover {
+      color: #005691 !important;
+    }
+
+    /* Primary action buttons: New Entry, Publish, Save */
+    [class*="ActionButton"],
+    [class*="ResponsiveActionButton"] {
+      background-color: #005691 !important;
+      transition: background-color 0.2s ease-in-out;
+    }
+    [class*="ActionButton"]:hover,
+    [class*="ResponsiveActionButton"]:hover {
+      background-color: #2C7BB0 !important;
+    }
+  </style>
 </head>
 <body>
   <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
