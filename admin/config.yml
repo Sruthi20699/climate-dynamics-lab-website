@@ -2,8 +2,8 @@ backend:
   name: github
   repo: Sruthi20699/climate-dynamics-lab-website
   branch: main
-  base_url: https://api.netlify.com
-  auth_endpoint: auth
+  base_url: https://climate-dynamics-lab-website.netlify.app
+  auth_endpoint: .netlify/functions/auth
 
 media_folder: "images/uploads"
 public_folder: "images/uploads"
