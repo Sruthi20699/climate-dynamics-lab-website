@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 240" role="img" aria-label="Illustration of ocean circulation, a general lab highlights graphic">
+  <defs>
+    <linearGradient id="ngd" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0F2C59"/>
+      <stop offset="100%" stop-color="#005691"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="240" fill="url(#ngd)"/>
+  <g transform="translate(200,105)" fill="none" stroke="#9FC1E0" stroke-opacity="0.55" stroke-width="2">
+    <circle r="56" stroke-dasharray="6 12"/>
+    <circle r="36" stroke-dasharray="4 9"/>
+  </g>
+  <path d="M-10,150 C60,125 130,160 200,145 C270,130 330,158 410,148"
+        transform="translate(0,0)" fill="none" stroke="#FFFFFF" stroke-opacity="0.6" stroke-width="4" stroke-linecap="round"/>
+  <path d="M0,190 C50,175 100,200 150,190 C200,180 250,203 300,190 C340,180 370,193 400,187 L400,240 L0,240 Z" fill="rgba(255,255,255,0.10)"/>
+  <path d="M0,210 C50,198 100,218 150,210 C200,202 250,220 300,210 C340,203 370,213 400,208 L400,240 L0,240 Z" fill="rgba(255,255,255,0.14)"/>
+</svg>

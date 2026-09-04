@@ -1,0 +1,46 @@
+{
+  "highlights": [
+    {
+      "date": "August 2026",
+      "title": "New Paper Published in Journal of Climate",
+      "description": "Our latest study on jet stream variability and its links to mid-latitude extremes is now available online.",
+      "image": "images/news-jetstream.svg",
+      "link": "publications.html"
+    },
+    {
+      "date": "June 2026",
+      "title": "PhD Student Wins Outstanding Poster Award",
+      "description": "Congratulations to our graduate student for receiving recognition at the international climate dynamics workshop.",
+      "image": "images/news-award.svg",
+      "link": ""
+    },
+    {
+      "date": "March 2026",
+      "title": "Lab Awarded New NSF Research Grant",
+      "description": "Funding will support a three-year project on ocean–atmosphere coupling and decadal climate prediction.",
+      "image": "images/news-grant.svg",
+      "link": "research.html"
+    },
+    {
+      "date": "January 2026",
+      "title": "Annual Lab Retreat Held in the Mountains",
+      "description": "The team gathered for a two-day retreat to plan upcoming research directions and welcome new members.",
+      "image": "images/news-retreat.svg",
+      "link": ""
+    },
+    {
+      "date": "November 2025",
+      "title": "Dr. Doe Delivers Keynote at International Climate Symposium",
+      "description": "Dr. Doe presented recent findings on Arctic–midlatitude teleconnections to an audience of over 500 researchers.",
+      "image": "images/news-keynote.svg",
+      "link": ""
+    },
+    {
+      "date": "September 2025",
+      "title": "Two New Postdoctoral Researchers Join the Lab",
+      "description": "We are pleased to welcome Dr. Amara Osei and Dr. Wei Lin to the Climate Dynamics Lab team.",
+      "image": "images/news-newmembers.svg",
+      "link": "people.html"
+    }
+  ]
+}

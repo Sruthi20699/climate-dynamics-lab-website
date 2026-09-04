@@ -65,64 +65,9 @@
     <div class="container">
 
       <section class="news-section" aria-label="News archive">
-        <div class="news-grid">
-          <article class="news-card reveal">
-            <img src="images/news-jetstream.svg" alt="Illustration of jet stream circulation, representing the new published paper" class="news-image" loading="lazy" />
-            <div class="news-content">
-              <span class="news-date">August 2026</span>
-              <h3>New Paper Published in <em>Journal of Climate</em></h3>
-              <p>Our latest study on jet stream variability and its links to mid-latitude extremes is now available online.</p>
-              <a href="publications.html" class="news-link">Read More &rarr;</a>
-            </div>
-          </article>
-          <article class="news-card reveal">
-            <img src="images/news-award.svg" alt="Illustration of an award medal, representing the student poster award" class="news-image" loading="lazy" />
-            <div class="news-content">
-              <span class="news-date">June 2026</span>
-              <h3>PhD Student Wins Outstanding Poster Award</h3>
-              <p>Congratulations to our graduate student for receiving recognition at the international climate dynamics workshop.</p>
-              <a href="#" class="news-link">Read More &rarr;</a>
-            </div>
-          </article>
-          <article class="news-card reveal">
-            <img src="images/news-grant.svg" alt="Illustration of an upward funding trend line over ocean waves, representing the new research grant" class="news-image" loading="lazy" />
-            <div class="news-content">
-              <span class="news-date">March 2026</span>
-              <h3>Lab Awarded New NSF Research Grant</h3>
-              <p>Funding will support a three-year project on ocean&ndash;atmosphere coupling and decadal climate prediction.</p>
-              <a href="research.html" class="news-link">Read More &rarr;</a>
-            </div>
-          </article>
-          <article class="news-card reveal">
-            <img src="images/news-retreat.svg" alt="Illustration of mountains at dusk, representing the annual lab retreat" class="news-image" loading="lazy" />
-            <div class="news-content">
-              <span class="news-date">January 2026</span>
-              <h3>Annual Lab Retreat Held in the Mountains</h3>
-              <p>The team gathered for a two-day retreat to plan upcoming research directions and welcome new members.</p>
-              <a href="#" class="news-link">Read More &rarr;</a>
-            </div>
-          </article>
-          <article class="news-card reveal">
-            <img src="images/news-keynote.svg" alt="Illustration of a speaker at a podium, representing the keynote presentation" class="news-image" loading="lazy" />
-            <div class="news-content">
-              <span class="news-date">November 2025</span>
-              <h3>Dr. Doe Delivers Keynote at International Climate Symposium</h3>
-              <p>Dr. Doe presented recent findings on Arctic&ndash;midlatitude teleconnections to an audience of over 500 researchers.</p>
-              <a href="#" class="news-link">Read More &rarr;</a>
-            </div>
-          </article>
-          <article class="news-card reveal">
-            <img src="images/news-newmembers.svg" alt="Illustration of two joining circles, representing new lab members" class="news-image" loading="lazy" />
-            <div class="news-content">
-              <span class="news-date">September 2025</span>
-              <h3>Two New Postdoctoral Researchers Join the Lab</h3>
-              <p>We are pleased to welcome Dr. Amara Osei and Dr. Wei Lin to the Climate Dynamics Lab team.</p>
-              <a href="people.html" class="news-link">Read More &rarr;</a>
-            </div>
-          </article>
-        </div>
+        <div class="news-grid" id="highlights-grid"></div>
         <div class="news-more">
-          <a href="#" class="btn btn-outline-dark">Load More Highlights</a>
+          <a href="#" class="btn btn-outline-dark" id="load-more-highlights" hidden>Load More Highlights</a>
         </div>
       </section>
 
@@ -162,5 +107,6 @@
   </footer>
 
   <script src="js/main.js" defer></script>
+  <script src="js/highlights-render.js" defer></script>
 </body>
 </html>

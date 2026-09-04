@@ -55,3 +55,55 @@ collections:
             fields:
               - { label: "Name", name: "name", widget: "string" }
               - { label: "Detail (e.g. PhD 2025 · now Assistant Professor, X University)", name: "detail", widget: "string" }
+
+  - name: "publications"
+    label: "Publications"
+    files:
+      - name: "list"
+        label: "Publication List"
+        file: "data/publications.json"
+        fields:
+          - label: "Publications"
+            name: "publications"
+            widget: "list"
+            summary: "{{fields.year}} — {{fields.title}}"
+            fields:
+              - { label: "Year", name: "year", widget: "number", value_type: "int" }
+              - label: "Authors"
+                name: "authors"
+                widget: "string"
+                hint: "Wrap a name in double asterisks to bold it, e.g. **Doe, J.A.**"
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Journal", name: "journal", widget: "string" }
+              - label: "Citation Detail"
+                name: "citation_detail"
+                widget: "string"
+                hint: "Volume, issue, and pages as they should appear, e.g. 39(4), 1123–1140."
+              - { label: "DOI Link", name: "doi_url", widget: "string", required: false }
+              - { label: "PDF Link", name: "pdf_url", widget: "string", required: false }
+
+  - name: "highlights"
+    label: "Highlights"
+    files:
+      - name: "list"
+        label: "Highlights List"
+        file: "data/highlights.json"
+        fields:
+          - label: "Highlights"
+            name: "highlights"
+            widget: "list"
+            summary: "{{fields.date}} — {{fields.title}}"
+            fields:
+              - { label: "Date (e.g. August 2026)", name: "date", widget: "string" }
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Description", name: "description", widget: "text" }
+              - label: "Image"
+                name: "image"
+                widget: "image"
+                required: false
+                hint: "Leave blank to use a default ocean-themed graphic"
+              - label: "Link"
+                name: "link"
+                widget: "string"
+                required: false
+                hint: "e.g. publications.html — leave blank for no link"

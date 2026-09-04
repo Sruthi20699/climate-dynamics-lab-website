@@ -1,0 +1,67 @@
+{
+  "publications": [
+    {
+      "year": 2026,
+      "authors": "**Doe, J.A.**, Osei, A., & Santos, M.",
+      "title": "Jet stream variability and its links to mid-latitude temperature extremes.",
+      "journal": "Journal of Climate",
+      "citation_detail": "39(4), 1123–1140.",
+      "doi_url": "#",
+      "pdf_url": "#"
+    },
+    {
+      "year": 2026,
+      "authors": "Lin, W., **Doe, J.A.**",
+      "title": "A machine learning emulator for regional atmospheric circulation patterns.",
+      "journal": "Geophysical Research Letters",
+      "citation_detail": "53(2), e2026GL107234.",
+      "doi_url": "#",
+      "pdf_url": "#"
+    },
+    {
+      "year": 2025,
+      "authors": "Okoro, D., **Doe, J.A.**, & Osei, A.",
+      "title": "Seasonal predictability of extreme precipitation using multi-model ensembles.",
+      "journal": "Climate Dynamics",
+      "citation_detail": "64(11), 3891–3907.",
+      "doi_url": "#",
+      "pdf_url": "#"
+    },
+    {
+      "year": 2025,
+      "authors": "Reyes, T., **Doe, J.A.**",
+      "title": "Ocean heat transport variability and its role in decadal climate prediction.",
+      "journal": "Journal of Physical Oceanography",
+      "citation_detail": "55(6), 1455–1472.",
+      "doi_url": "#",
+      "pdf_url": "#"
+    },
+    {
+      "year": 2025,
+      "authors": "Kim, H., **Doe, J.A.**, & Lin, W.",
+      "title": "Arctic amplification and its influence on midlatitude atmospheric blocking.",
+      "journal": "Nature Climate Change",
+      "citation_detail": "15, 512–520.",
+      "doi_url": "#",
+      "pdf_url": "#"
+    },
+    {
+      "year": 2024,
+      "authors": "Achebe, S., **Doe, J.A.**",
+      "title": "Evaluating climate model biases in simulated storm track intensity.",
+      "journal": "Journal of Climate",
+      "citation_detail": "37(19), 6301–6318.",
+      "doi_url": "#",
+      "pdf_url": "#"
+    },
+    {
+      "year": 2024,
+      "authors": "**Doe, J.A.**, Santos, M.",
+      "title": "Persistent weather regimes under a changing climate: a dynamical systems perspective.",
+      "journal": "Quarterly Journal of the Royal Meteorological Society",
+      "citation_detail": "150(758), 221–238.",
+      "doi_url": "#",
+      "pdf_url": "#"
+    }
+  ]
+}
