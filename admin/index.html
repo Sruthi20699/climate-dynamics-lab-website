@@ -77,5 +77,211 @@
 </head>
 <body>
   <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+  <script>
+    // Custom preview templates so editing a list of people, publications, or
+    // highlights shows something that actually resembles the live site
+    // (real card/citation layout, real fonts and colors) instead of Decap's
+    // generic default field dump. Written in plain ES5 + the classic
+    // createClass/h globals Decap exposes, since there's no build step here.
+
+    CMS.registerPreviewStyle('/css/style.css');
+    CMS.registerPreviewStyle(
+      '@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Source+Serif+4:wght@600;700&display=swap"); body { padding: 24px; background: #F8F9FA; }',
+      { raw: true }
+    );
+
+    var AVATAR_GRADIENTS = [
+      ['#0F2C59', '#005691'],
+      ['#005691', '#2C7BB0'],
+      ['#0A1F3F', '#0891B2'],
+      ['#2C7BB0', '#0F2C59'],
+      ['#0891B2', '#0A1F3F'],
+      ['#0F2C59', '#0891B2']
+    ];
+
+    function initials(name) {
+      var words = (name || '').replace(/^Dr\.\s*/i, '').trim().split(/\s+/);
+      return words.slice(0, 2).map(function (w) { return w[0] || ''; }).join('').toUpperCase();
+    }
+
+    function gradientFor(name) {
+      var hash = 0;
+      var str = name || '';
+      for (var i = 0; i < str.length; i++) {
+        hash = (hash * 31 + str.charCodeAt(i)) >>> 0;
+      }
+      var pair = AVATAR_GRADIENTS[hash % AVATAR_GRADIENTS.length];
+      return 'linear-gradient(135deg, ' + pair[0] + ', ' + pair[1] + ')';
+    }
+
+    function renderBoldParts(text) {
+      var parts = [];
+      var regex = /\*\*(.+?)\*\*/g;
+      var lastIndex = 0;
+      var match;
+      var i = 0;
+      while ((match = regex.exec(text || ''))) {
+        if (match.index > lastIndex) parts.push(text.slice(lastIndex, match.index));
+        parts.push(h('strong', { key: 'b' + i++ }, match[1]));
+        lastIndex = regex.lastIndex;
+      }
+      if (lastIndex < (text || '').length) parts.push(text.slice(lastIndex));
+      return parts;
+    }
+
+    var TeamPreview = createClass({
+      renderMemberCard: function (person, getAsset) {
+        var photoEl;
+        if (person.photo) {
+          var url = getAsset ? getAsset(person.photo) : person.photo;
+          photoEl = h('img', { className: 'member-photo', src: url, alt: '' });
+        } else {
+          photoEl = h(
+            'div',
+            { className: 'member-photo member-photo-initials', style: { background: gradientFor(person.name) } },
+            initials(person.name)
+          );
+        }
+        var links = [];
+        if (person.email) links.push(h('a', { key: 'e' }, 'Email'));
+        if (person.scholar) links.push(h('a', { key: 's' }, 'Scholar'));
+        return h(
+          'article',
+          { className: 'member-card', key: person.name },
+          photoEl,
+          h('h3', {}, person.name),
+          h('p', { className: 'member-role' }, person.role),
+          h('p', { className: 'member-bio' }, person.bio),
+          links.length ? h('div', { className: 'member-links' }, links) : null
+        );
+      },
+      render: function () {
+        var data = this.props.entry.get('data');
+        var getAsset = this.props.getAsset;
+        var postdocs = data.get('postdocs') ? data.get('postdocs').toJS() : [];
+        var phdStudents = data.get('phdStudents') ? data.get('phdStudents').toJS() : [];
+        var alumni = data.get('alumni') ? data.get('alumni').toJS() : [];
+        var self = this;
+
+        return h(
+          'div',
+          { className: 'container' },
+          h(
+            'section',
+            { className: 'team-section' },
+            h('div', { className: 'section-heading' }, h('h2', {}, 'Postdoctoral Researchers')),
+            h('div', { className: 'member-grid' }, postdocs.map(function (p) { return self.renderMemberCard(p, getAsset); }))
+          ),
+          h(
+            'section',
+            { className: 'team-section' },
+            h('div', { className: 'section-heading' }, h('h2', {}, 'PhD Students')),
+            h('div', { className: 'member-grid' }, phdStudents.map(function (p) { return self.renderMemberCard(p, getAsset); }))
+          ),
+          h(
+            'section',
+            { className: 'alumni-section' },
+            h('div', { className: 'section-heading' }, h('h2', {}, 'Lab Alumni')),
+            h(
+              'ul',
+              { className: 'alumni-list' },
+              alumni.map(function (a, i) {
+                return h('li', { key: i }, h('span', { className: 'alumni-name' }, a.name), h('span', { className: 'alumni-detail' }, a.detail));
+              })
+            )
+          )
+        );
+      }
+    });
+
+    var PublicationsPreview = createClass({
+      render: function () {
+        var data = this.props.entry.get('data');
+        var pubs = data.get('publications') ? data.get('publications').toJS() : [];
+        var byYear = {};
+        pubs.forEach(function (p) {
+          var y = p.year;
+          if (!byYear[y]) byYear[y] = [];
+          byYear[y].push(p);
+        });
+        var years = Object.keys(byYear).sort(function (a, b) { return b - a; });
+
+        return h(
+          'div',
+          { className: 'container' },
+          years.map(function (year) {
+            return h(
+              'section',
+              { className: 'pub-year', key: year },
+              h('h2', {}, year),
+              h(
+                'ul',
+                { className: 'pub-list' },
+                byYear[year].map(function (pub, i) {
+                  var links = [];
+                  if (pub.doi_url) links.push(h('a', { key: 'd' }, 'DOI'));
+                  if (pub.pdf_url) links.push(h('a', { key: 'p' }, 'PDF'));
+                  return h(
+                    'li',
+                    { className: 'pub-item', key: i },
+                    h(
+                      'p',
+                      { className: 'pub-citation' },
+                      renderBoldParts(pub.authors),
+                      ' (' + pub.year + '). ' + (pub.title || '') + ' ',
+                      h('em', {}, pub.journal || ''),
+                      ', ' + (pub.citation_detail || '')
+                    ),
+                    links.length ? h('div', { className: 'pub-links' }, links) : null
+                  );
+                })
+              )
+            );
+          })
+        );
+      }
+    });
+
+    var HighlightsPreview = createClass({
+      render: function () {
+        var data = this.props.entry.get('data');
+        var getAsset = this.props.getAsset;
+        var items = data.get('highlights') ? data.get('highlights').toJS() : [];
+
+        return h(
+          'div',
+          { className: 'container' },
+          h(
+            'div',
+            { className: 'news-grid' },
+            items.map(function (item, i) {
+              var imgSrc = item.image ? (getAsset ? getAsset(item.image) : item.image) : '/images/news-default.svg';
+              var linkEl = item.link && item.link !== '#' ? h('a', { className: 'news-link' }, 'Read More →') : null;
+              return h(
+                'article',
+                { className: 'news-card', key: i },
+                h('img', { className: 'news-image', src: imgSrc, alt: '' }),
+                h(
+                  'div',
+                  { className: 'news-content' },
+                  h('span', { className: 'news-date' }, item.date),
+                  h('h3', {}, item.title),
+                  h('p', {}, item.description),
+                  linkEl
+                )
+              );
+            })
+          )
+        );
+      }
+    });
+
+    CMS.registerPreviewTemplate('team', TeamPreview);
+    CMS.registerPreviewTemplate('people', TeamPreview);
+    CMS.registerPreviewTemplate('publications-list', PublicationsPreview);
+    CMS.registerPreviewTemplate('publications', PublicationsPreview);
+    CMS.registerPreviewTemplate('highlights-list', HighlightsPreview);
+    CMS.registerPreviewTemplate('highlights', HighlightsPreview);
+  </script>
 </body>
 </html>

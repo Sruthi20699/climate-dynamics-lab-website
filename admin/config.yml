@@ -63,7 +63,7 @@ collections:
   - name: "publications"
     label: "Publications"
     files:
-      - name: "list"
+      - name: "publications-list"
         label: "Publication List"
         file: "data/publications.json"
         fields:
@@ -89,7 +89,7 @@ collections:
   - name: "highlights"
     label: "Highlights"
     files:
-      - name: "list"
+      - name: "highlights-list"
         label: "Highlights List"
         file: "data/highlights.json"
         fields:
