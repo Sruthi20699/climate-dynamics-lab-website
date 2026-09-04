@@ -1,0 +1,60 @@
+{
+  "postdocs": [
+    {
+      "name": "Dr. Amara Osei",
+      "role": "Postdoctoral Researcher",
+      "bio": "Studies ocean heat transport and its influence on decadal climate variability using coupled climate models.",
+      "email": "amara.osei@northfield.edu",
+      "scholar": "#",
+      "photo": "images/avatar-postdoc-1.svg"
+    },
+    {
+      "name": "Dr. Wei Lin",
+      "role": "Postdoctoral Researcher",
+      "bio": "Applies machine learning methods to emulate atmospheric circulation patterns in high-resolution climate simulations.",
+      "email": "wei.lin@northfield.edu",
+      "scholar": "#",
+      "photo": "images/avatar-postdoc-2.svg"
+    }
+  ],
+  "phdStudents": [
+    {
+      "name": "Maria Santos",
+      "role": "PhD Candidate, 4th Year",
+      "bio": "Investigates the dynamical drivers of atmospheric blocking events over the North Atlantic.",
+      "email": "maria.santos@northfield.edu",
+      "scholar": "#",
+      "photo": "images/avatar-phd-1.svg"
+    },
+    {
+      "name": "David Okoro",
+      "role": "PhD Student, 2nd Year",
+      "bio": "Examines seasonal predictability of extreme precipitation using ensemble climate model output.",
+      "email": "david.okoro@northfield.edu",
+      "scholar": "#",
+      "photo": "images/avatar-phd-2.svg"
+    },
+    {
+      "name": "Priya Nair",
+      "role": "PhD Student, 1st Year",
+      "bio": "Focuses on reanalysis-based diagnostics of jet stream variability and midlatitude storm tracks.",
+      "email": "priya.nair@northfield.edu",
+      "scholar": "#",
+      "photo": "images/avatar-phd-3.svg"
+    }
+  ],
+  "alumni": [
+    {
+      "name": "Dr. Thomas Reyes",
+      "detail": "PhD 2025 · now Assistant Professor, Pacific Coast University"
+    },
+    {
+      "name": "Dr. Hannah Kim",
+      "detail": "Postdoc 2022–2024 · now Research Scientist, National Weather Center"
+    },
+    {
+      "name": "Dr. Samuel Achebe",
+      "detail": "PhD 2023 · now Climate Data Scientist, GreenGrid Analytics"
+    }
+  ]
+}

@@ -105,28 +105,7 @@
           <h2 id="postdocs-heading">Postdoctoral Researchers</h2>
           <p>Early-career scientists leading independent research within the lab</p>
         </div>
-        <div class="member-grid">
-          <article class="member-card reveal">
-            <img src="images/avatar-postdoc-1.svg" alt="Avatar illustration for Dr. Amara Osei" class="member-photo" loading="lazy" />
-            <h3>Dr. Amara Osei</h3>
-            <p class="member-role">Postdoctoral Researcher</p>
-            <p class="member-bio">Studies ocean heat transport and its influence on decadal climate variability using coupled climate models.</p>
-            <div class="member-links">
-              <a href="mailto:amara.osei@northfield.edu" aria-label="Email Amara Osei">Email</a>
-              <a href="#" aria-label="Amara Osei's Google Scholar profile">Scholar</a>
-            </div>
-          </article>
-          <article class="member-card reveal">
-            <img src="images/avatar-postdoc-2.svg" alt="Avatar illustration for Dr. Wei Lin" class="member-photo" loading="lazy" />
-            <h3>Dr. Wei Lin</h3>
-            <p class="member-role">Postdoctoral Researcher</p>
-            <p class="member-bio">Applies machine learning methods to emulate atmospheric circulation patterns in high-resolution climate simulations.</p>
-            <div class="member-links">
-              <a href="mailto:wei.lin@northfield.edu" aria-label="Email Wei Lin">Email</a>
-              <a href="#" aria-label="Wei Lin's Google Scholar profile">Scholar</a>
-            </div>
-          </article>
-        </div>
+        <div class="member-grid" id="postdoc-grid"></div>
       </section>
 
       <!-- ===== PhD Students ===== -->
@@ -135,38 +114,7 @@
           <h2 id="phd-heading">PhD Students</h2>
           <p>Graduate researchers pursuing doctoral degrees in the lab</p>
         </div>
-        <div class="member-grid">
-          <article class="member-card reveal">
-            <img src="images/avatar-phd-1.svg" alt="Avatar illustration for Maria Santos" class="member-photo" loading="lazy" />
-            <h3>Maria Santos</h3>
-            <p class="member-role">PhD Candidate, 4th Year</p>
-            <p class="member-bio">Investigates the dynamical drivers of atmospheric blocking events over the North Atlantic.</p>
-            <div class="member-links">
-              <a href="mailto:maria.santos@northfield.edu" aria-label="Email Maria Santos">Email</a>
-              <a href="#" aria-label="Maria Santos's Google Scholar profile">Scholar</a>
-            </div>
-          </article>
-          <article class="member-card reveal">
-            <img src="images/avatar-phd-2.svg" alt="Avatar illustration for David Okoro" class="member-photo" loading="lazy" />
-            <h3>David Okoro</h3>
-            <p class="member-role">PhD Student, 2nd Year</p>
-            <p class="member-bio">Examines seasonal predictability of extreme precipitation using ensemble climate model output.</p>
-            <div class="member-links">
-              <a href="mailto:david.okoro@northfield.edu" aria-label="Email David Okoro">Email</a>
-              <a href="#" aria-label="David Okoro's Google Scholar profile">Scholar</a>
-            </div>
-          </article>
-          <article class="member-card reveal">
-            <img src="images/avatar-phd-3.svg" alt="Avatar illustration for Priya Nair" class="member-photo" loading="lazy" />
-            <h3>Priya Nair</h3>
-            <p class="member-role">PhD Student, 1st Year</p>
-            <p class="member-bio">Focuses on reanalysis-based diagnostics of jet stream variability and midlatitude storm tracks.</p>
-            <div class="member-links">
-              <a href="mailto:priya.nair@northfield.edu" aria-label="Email Priya Nair">Email</a>
-              <a href="#" aria-label="Priya Nair's Google Scholar profile">Scholar</a>
-            </div>
-          </article>
-        </div>
+        <div class="member-grid" id="phd-grid"></div>
       </section>
 
       <!-- ===== Alumni ===== -->
@@ -175,20 +123,7 @@
           <h2 id="alumni-heading">Lab Alumni</h2>
           <p>Former members and where they are now</p>
         </div>
-        <ul class="alumni-list">
-          <li>
-            <span class="alumni-name">Dr. Thomas Reyes</span>
-            <span class="alumni-detail">PhD 2025 &middot; now Assistant Professor, Pacific Coast University</span>
-          </li>
-          <li>
-            <span class="alumni-name">Dr. Hannah Kim</span>
-            <span class="alumni-detail">Postdoc 2022&ndash;2024 &middot; now Research Scientist, National Weather Center</span>
-          </li>
-          <li>
-            <span class="alumni-name">Dr. Samuel Achebe</span>
-            <span class="alumni-detail">PhD 2023 &middot; now Climate Data Scientist, GreenGrid Analytics</span>
-          </li>
-        </ul>
+        <ul class="alumni-list" id="alumni-list"></ul>
       </section>
 
     </div>
@@ -227,5 +162,6 @@
   </footer>
 
   <script src="js/main.js" defer></script>
+  <script src="js/people-render.js" defer></script>
 </body>
 </html>
