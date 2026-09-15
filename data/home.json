@@ -1,5 +1,10 @@
 {
   "photo": "images/uploads/abhishek-savita.png",
+  "heroEyebrow": "Centre for Atmospheric Sciences · IIT Delhi",
+  "heroIntro": "My research explores global climate dynamics through advanced numerical modelling and observational analysis, with a focus on ocean heat and salt content, oceanic transport, water-mass transformation, ocean circulation, and climate variability modes such as the IOD, ENSO, PDO, AMV, and NAO.",
+  "researchTagline": "Physical Oceanography & Climate Dynamics",
+  "researchFocusSubtitle": "Current areas of interest",
+  "announcementHeading": "Research Opportunities",
   "position": "Assistant Professor, Centre for Atmospheric Sciences, Indian Institute of Technology Delhi (since June 2025)",
   "bio": "Dr. Savita is an Assistant Professor at the Centre for Atmospheric Sciences, Indian Institute of Technology Delhi, since June 2025. He completed his Ph.D. at the University of Tasmania and CSIRO, Australia (2021), following a Master of Technology in CORAL and a Master's in Mathematics from IIT Kharagpur (2015 and 2013), and a Bachelor's in Mathematics from C.S.J.M. University, Kanpur (2011). He was a postdoctoral researcher at the GEOMAR Helmholtz Centre for Ocean Research, Kiel, Germany (2021–2024), and at RSMAS, University of Miami (2024–2025). He is a contributing author to three chapters (2, 7, and 9) of the Intergovernmental Panel on Climate Change (IPCC) Sixth Assessment Report (AR6).",
   "researchFocus": [
@@ -25,7 +30,6 @@
     }
   ],
   "recruitingStatement": "We welcome inquiries from motivated students and researchers with a background in the sciences who are interested in physical oceanography and climate change.",
-  "recruitingEmail": "asavita@iitd.ac.in",
   "scholarUrl": "",
   "researchgateUrl": ""
 }

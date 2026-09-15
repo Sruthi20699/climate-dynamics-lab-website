@@ -25,6 +25,9 @@ collections:
             widget: "image"
             required: false
             hint: "Leave blank to use a default illustration"
+          - { label: "Hero Eyebrow", name: "heroEyebrow", widget: "string", hint: "Small label above the headline, e.g. Centre for Atmospheric Sciences · IIT Delhi" }
+          - { label: "Hero Intro Paragraph", name: "heroIntro", widget: "text" }
+          - { label: "Research Tagline", name: "researchTagline", widget: "string", hint: "Shown next to the job title in the hero subtitle, e.g. Physical Oceanography & Climate Dynamics" }
           - { label: "Current Position", name: "position", widget: "string" }
           - { label: "Bio", name: "bio", widget: "text" }
           - label: "Research Focus"
@@ -34,8 +37,9 @@ collections:
             fields:
               - { label: "Title", name: "title", widget: "string" }
               - { label: "Description", name: "description", widget: "text" }
+          - { label: "Research Focus Subtitle", name: "researchFocusSubtitle", widget: "string" }
+          - { label: "Research Opportunities Heading", name: "announcementHeading", widget: "string" }
           - { label: "Research Opportunities Statement", name: "recruitingStatement", widget: "text" }
-          - { label: "Recruiting Contact Email", name: "recruitingEmail", widget: "string" }
           - { label: "Google Scholar URL", name: "scholarUrl", widget: "string", required: false }
           - { label: "ResearchGate URL", name: "researchgateUrl", widget: "string", required: false }
 
@@ -176,10 +180,11 @@ collections:
         label: "Contact Info"
         file: "data/contact.json"
         fields:
-          - { label: "Name", name: "name", widget: "string" }
-          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Name", name: "name", widget: "string", hint: "Used site-wide: header, footer, and hero" }
+          - { label: "Title", name: "title", widget: "string", hint: "e.g. Assistant Professor — used site-wide" }
           - { label: "Department", name: "department", widget: "string" }
           - { label: "Institution", name: "institution", widget: "string" }
+          - { label: "Short Institution Name", name: "shortInstitution", widget: "string", hint: "Used in the site header and hero, e.g. IIT Delhi" }
           - { label: "Address", name: "address", widget: "text", hint: "e.g. Hauz Khas New Delhi 110016, Indian" }
           - { label: "Email", name: "email", widget: "string" }
           - { label: "Tel", name: "phone", widget: "string" }

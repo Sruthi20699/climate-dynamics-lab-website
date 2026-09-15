@@ -22,7 +22,8 @@
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
         body: encodeFormData(new FormData(form))
       })
-        .then(() => {
+        .then((res) => {
+          if (!res.ok) throw new Error(`Form submission failed with status ${res.status}`);
           form.reset();
           if (status) {
             status.textContent = 'Thanks — your message has been sent.';
