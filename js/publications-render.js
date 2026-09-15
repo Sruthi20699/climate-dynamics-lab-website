@@ -6,7 +6,7 @@
   }
 
   // Minimal markdown-lite: only supports **bold** so editors can highlight
-  // the lab's own author name in a citation without needing raw HTML.
+  // the author's own name in a citation without needing raw HTML.
   function renderBoldMarkdown(str) {
     const escaped = escapeHtml(str);
     return escaped.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
@@ -18,10 +18,11 @@
 
     const p = document.createElement('p');
     p.className = 'pub-citation';
+    const detail = pub.citation_detail ? `, ${escapeHtml(pub.citation_detail)}` : '.';
     p.innerHTML =
       `${renderBoldMarkdown(pub.authors || '')} (${pub.year}). ` +
       `${escapeHtml(pub.title || '')} ` +
-      `<em>${escapeHtml(pub.journal || '')}</em>, ${escapeHtml(pub.citation_detail || '')}`;
+      `<em>${escapeHtml(pub.journal || '')}</em>${detail}`;
     li.appendChild(p);
 
     const links = document.createElement('div');
@@ -45,23 +46,9 @@
     return li;
   }
 
-  async function init() {
-    const container = document.getElementById('publications-list');
-    if (!container) return;
-
-    let data;
-    try {
-      const res = await fetch('data/publications.json');
-      data = await res.json();
-    } catch (e) {
-      return;
-    }
-
-    const pubs = Array.isArray(data.publications) ? data.publications.slice() : [];
-    if (!pubs.length) return;
-
+  function renderByYear(container, items, observer, prefersReducedMotion) {
     const byYear = new Map();
-    pubs.forEach((pub) => {
+    items.forEach((pub) => {
       const year = pub.year;
       if (!byYear.has(year)) byYear.set(year, []);
       byYear.get(year).push(pub);
@@ -69,25 +56,13 @@
 
     const years = Array.from(byYear.keys()).sort((a, b) => b - a);
 
-    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    const observer = (!prefersReducedMotion && 'IntersectionObserver' in window)
-      ? new IntersectionObserver((entries, obs) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              entry.target.classList.add('in-view');
-              obs.unobserve(entry.target);
-            }
-          });
-        }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' })
-      : null;
-
     years.forEach((year) => {
       const section = document.createElement('section');
       section.className = 'pub-year reveal';
-      section.setAttribute('aria-labelledby', `pub-${year}`);
+      section.setAttribute('aria-labelledby', `pub-${container.id}-${year}`);
 
       const h2 = document.createElement('h2');
-      h2.id = `pub-${year}`;
+      h2.id = `pub-${container.id}-${year}`;
       h2.textContent = String(year);
       section.appendChild(h2);
 
@@ -104,6 +79,43 @@
         observer.observe(section);
       }
     });
+  }
+
+  async function init() {
+    const papersContainer = document.getElementById('publications-list');
+    const datasetsContainer = document.getElementById('datasets-list');
+    if (!papersContainer && !datasetsContainer) return;
+
+    let data;
+    try {
+      const res = await fetch('data/publications.json');
+      data = await res.json();
+    } catch (e) {
+      return;
+    }
+
+    const papers = Array.isArray(data.papers) ? data.papers.slice() : [];
+    const datasets = Array.isArray(data.datasets) ? data.datasets.slice() : [];
+
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const observer = (!prefersReducedMotion && 'IntersectionObserver' in window)
+      ? new IntersectionObserver((entries, obs) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('in-view');
+              obs.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' })
+      : null;
+
+    if (papersContainer && papers.length) {
+      renderByYear(papersContainer, papers, observer, prefersReducedMotion);
+    }
+
+    if (datasetsContainer && datasets.length) {
+      renderByYear(datasetsContainer, datasets, observer, prefersReducedMotion);
+    }
   }
 
   if (document.readyState === 'loading') {

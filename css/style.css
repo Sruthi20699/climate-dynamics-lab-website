@@ -1,5 +1,5 @@
 /* ==========================================================================
-   Climate Dynamics Lab — Base Stylesheet
+   Dr. Abhishek Savita — Base Stylesheet
    ========================================================================== */
 
 /* ---------- 1. CSS Variables & Palette ---------- */
@@ -1204,6 +1204,29 @@ p {
 
 .form-group textarea {
   resize: vertical;
+}
+
+.form-status {
+  margin-bottom: 20px;
+  padding: 12px 14px;
+  border-radius: var(--radius-sm);
+  font-size: 0.9rem;
+  font-weight: 600;
+  background-color: var(--color-bg);
+  border: 1px solid var(--color-border);
+  color: var(--color-text);
+}
+
+.form-status-success {
+  background-color: #E6F4EA;
+  border-color: #A8D5B5;
+  color: #1E7A34;
+}
+
+.form-status-error {
+  background-color: #FCE8E6;
+  border-color: #F3B4AE;
+  color: #B3261E;
 }
 
 .map-wrap {

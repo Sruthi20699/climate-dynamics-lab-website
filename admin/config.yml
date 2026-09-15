@@ -13,101 +13,174 @@ media_folder: "images/uploads"
 public_folder: "images/uploads"
 
 collections:
-  - name: "people"
-    label: "People"
+  - name: "home"
+    label: "Home Page"
     files:
-      - name: "team"
-        label: "Team & Alumni"
-        file: "data/people.json"
+      - name: "home-content"
+        label: "Home Page Content"
+        file: "data/home.json"
         fields:
-          - label: "Postdoctoral Researchers"
-            name: "postdocs"
+          - label: "Photo"
+            name: "photo"
+            widget: "image"
+            required: false
+            hint: "Leave blank to use a default illustration"
+          - { label: "Current Position", name: "position", widget: "string" }
+          - { label: "Bio", name: "bio", widget: "text" }
+          - label: "Research Focus"
+            name: "researchFocus"
             widget: "list"
-            summary: "{{name}}"
+            summary: "{{title}}"
             fields:
-              - { label: "Name", name: "name", widget: "string" }
-              - { label: "Role", name: "role", widget: "string", default: "Postdoctoral Researcher" }
-              - { label: "Bio", name: "bio", widget: "text" }
-              - { label: "Email", name: "email", widget: "string", required: false }
-              - { label: "Google Scholar URL", name: "scholar", widget: "string", required: false }
-              - label: "Photo"
-                name: "photo"
-                widget: "image"
-                required: false
-                hint: "Leave blank to auto-generate a colored initials avatar"
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Description", name: "description", widget: "text" }
+          - { label: "Research Opportunities Statement", name: "recruitingStatement", widget: "text" }
+          - { label: "Recruiting Contact Email", name: "recruitingEmail", widget: "string" }
+          - { label: "Google Scholar URL", name: "scholarUrl", widget: "string", required: false }
+          - { label: "ResearchGate URL", name: "researchgateUrl", widget: "string", required: false }
 
-          - label: "PhD Students"
-            name: "phdStudents"
+  - name: "biosketch"
+    label: "Bio-Sketch"
+    files:
+      - name: "biosketch-content"
+        label: "Bio-Sketch Content"
+        file: "data/biosketch.json"
+        fields:
+          - { label: "Current Position", name: "currentPosition", widget: "string" }
+          - label: "Education"
+            name: "education"
             widget: "list"
-            summary: "{{name}}"
-            fields:
-              - { label: "Name", name: "name", widget: "string" }
-              - { label: "Role (e.g. PhD Student, 2nd Year)", name: "role", widget: "string" }
-              - { label: "Bio", name: "bio", widget: "text" }
-              - { label: "Email", name: "email", widget: "string", required: false }
-              - { label: "Google Scholar URL", name: "scholar", widget: "string", required: false }
-              - label: "Photo"
-                name: "photo"
-                widget: "image"
-                required: false
-                hint: "Leave blank to auto-generate a colored initials avatar"
-
-          - label: "Lab Alumni"
-            name: "alumni"
+            field: { label: "Entry", name: "entry", widget: "string" }
+          - label: "Professional Experience"
+            name: "experience"
             widget: "list"
-            summary: "{{name}}"
-            fields:
-              - { label: "Name", name: "name", widget: "string" }
-              - { label: "Detail (e.g. PhD 2025 · now Assistant Professor, X University)", name: "detail", widget: "string" }
+            field: { label: "Entry", name: "entry", widget: "string" }
+          - { label: "IPCC Contribution", name: "ipccLine", widget: "text" }
+          - label: "Awards & Recognition"
+            name: "awards"
+            widget: "list"
+            field: { label: "Entry", name: "entry", widget: "string" }
+          - label: "Professional Contributions"
+            name: "contributions"
+            widget: "list"
+            field: { label: "Entry", name: "entry", widget: "string" }
+          - label: "Talks & Presentations"
+            name: "talks"
+            widget: "list"
+            field: { label: "Entry", name: "entry", widget: "string" }
 
   - name: "publications"
     label: "Publications"
     files:
       - name: "publications-list"
-        label: "Publication List"
+        label: "Publications & Datasets"
         file: "data/publications.json"
         fields:
-          - label: "Publications"
-            name: "publications"
+          - label: "Papers"
+            name: "papers"
             widget: "list"
             summary: "{{fields.year}} — {{fields.title}}"
-            fields:
+            fields: &pub_fields
               - { label: "Year", name: "year", widget: "number", value_type: "int" }
               - label: "Authors"
                 name: "authors"
                 widget: "string"
-                hint: "Wrap a name in double asterisks to bold it, e.g. **Doe, J.A.**"
+                hint: "Wrap your own name in double asterisks to bold it, e.g. **Abhishek Savita**"
               - { label: "Title", name: "title", widget: "string" }
-              - { label: "Journal", name: "journal", widget: "string" }
+              - { label: "Journal / Source", name: "journal", widget: "string" }
               - label: "Citation Detail"
                 name: "citation_detail"
                 widget: "string"
+                required: false
                 hint: "Volume, issue, and pages as they should appear, e.g. 39(4), 1123–1140."
-              - { label: "DOI Link", name: "doi_url", widget: "string", required: false }
+              - { label: "DOI / Link", name: "doi_url", widget: "string", required: false }
               - { label: "PDF Link", name: "pdf_url", widget: "string", required: false }
-
-  - name: "highlights"
-    label: "Highlights"
-    files:
-      - name: "highlights-list"
-        label: "Highlights List"
-        file: "data/highlights.json"
-        fields:
-          - label: "Highlights"
-            name: "highlights"
+          - label: "Datasets"
+            name: "datasets"
             widget: "list"
-            summary: "{{fields.date}} — {{fields.title}}"
+            summary: "{{fields.year}} — {{fields.title}}"
+            fields: *pub_fields
+
+  - name: "projects"
+    label: "Projects"
+    files:
+      - name: "projects-list"
+        label: "Sponsored Research Projects"
+        file: "data/projects.json"
+        fields:
+          - label: "Projects"
+            name: "projects"
+            widget: "list"
+            summary: "{{title}}"
             fields:
-              - { label: "Date (e.g. August 2026)", name: "date", widget: "string" }
               - { label: "Title", name: "title", widget: "string" }
-              - { label: "Description", name: "description", widget: "text" }
-              - label: "Image"
-                name: "image"
-                widget: "image"
-                required: false
-                hint: "Leave blank to use a default ocean-themed graphic"
-              - label: "Link"
-                name: "link"
-                widget: "string"
-                required: false
-                hint: "e.g. publications.html — leave blank for no link"
+              - { label: "Funding Agency", name: "agency", widget: "string" }
+              - { label: "Duration", name: "duration", widget: "string", hint: "e.g. 2026–2029" }
+
+  - name: "students"
+    label: "Students"
+    files:
+      - name: "students-list"
+        label: "Students"
+        file: "data/students.json"
+        fields:
+          - label: "PhD Students"
+            name: "phdStudents"
+            widget: "list"
+            summary: "{{name}}"
+            fields: &student_fields
+              - { label: "Name", name: "name", widget: "string" }
+              - { label: "Detail", name: "detail", widget: "string", hint: "e.g. PhD Student, 2nd Year" }
+          - label: "M.Tech Students"
+            name: "mtechStudents"
+            widget: "list"
+            summary: "{{name}}"
+            fields: *student_fields
+          - label: "Master Students"
+            name: "masterStudents"
+            widget: "list"
+            summary: "{{name}}"
+            fields: *student_fields
+          - label: "Bachelor Students"
+            name: "bachelorStudents"
+            widget: "list"
+            summary: "{{name}}"
+            fields: *student_fields
+
+  - name: "courses"
+    label: "Courses"
+    files:
+      - name: "courses-list"
+        label: "Courses"
+        file: "data/courses.json"
+        fields:
+          - label: "Postgraduate Courses"
+            name: "postgraduate"
+            widget: "list"
+            summary: "{{code}} — {{name}}"
+            fields: &course_fields
+              - { label: "Course Code", name: "code", widget: "string", required: false }
+              - { label: "Course Name", name: "name", widget: "string" }
+              - { label: "Semester", name: "semester", widget: "string", required: false }
+              - { label: "Description", name: "description", widget: "text", required: false }
+          - label: "Undergraduate Courses"
+            name: "undergraduate"
+            widget: "list"
+            summary: "{{code}} — {{name}}"
+            fields: *course_fields
+
+  - name: "contact"
+    label: "Contact Info"
+    files:
+      - name: "contact-info"
+        label: "Contact Info"
+        file: "data/contact.json"
+        fields:
+          - { label: "Name", name: "name", widget: "string" }
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Department", name: "department", widget: "string" }
+          - { label: "Institution", name: "institution", widget: "string" }
+          - { label: "Address", name: "address", widget: "text", hint: "e.g. Hauz Khas New Delhi 110016, Indian" }
+          - { label: "Email", name: "email", widget: "string" }
+          - { label: "Tel", name: "phone", widget: "string" }
+          - { label: "Office Location", name: "office", widget: "string" }

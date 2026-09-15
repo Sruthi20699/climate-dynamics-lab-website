@@ -1,0 +1,31 @@
+{
+  "photo": "images/uploads/abhishek-savita.png",
+  "position": "Assistant Professor, Centre for Atmospheric Sciences, Indian Institute of Technology Delhi (since June 2025)",
+  "bio": "Dr. Savita is an Assistant Professor at the Centre for Atmospheric Sciences, Indian Institute of Technology Delhi, since June 2025. He completed his Ph.D. at the University of Tasmania and CSIRO, Australia (2021), following a Master of Technology in CORAL and a Master's in Mathematics from IIT Kharagpur (2015 and 2013), and a Bachelor's in Mathematics from C.S.J.M. University, Kanpur (2011). He was a postdoctoral researcher at the GEOMAR Helmholtz Centre for Ocean Research, Kiel, Germany (2021–2024), and at RSMAS, University of Miami (2024–2025). He is a contributing author to three chapters (2, 7, and 9) of the Intergovernmental Panel on Climate Change (IPCC) Sixth Assessment Report (AR6).",
+  "researchFocus": [
+    {
+      "title": "Ocean Heat & Salt Content",
+      "description": "Quantifying changes in upper- and full-depth ocean heat and salt content and their role in the Earth's energy and water budgets."
+    },
+    {
+      "title": "Oceanic Transport",
+      "description": "Diagnosing the pathways and magnitude of heat and volume transport across ocean basins."
+    },
+    {
+      "title": "Water-Mass Transformation",
+      "description": "Investigating the processes that transform water masses and drive the ocean's overturning circulation."
+    },
+    {
+      "title": "Ocean Circulation",
+      "description": "Understanding the dynamics of large-scale ocean circulation and its response to a changing climate."
+    },
+    {
+      "title": "Climate Variability Modes",
+      "description": "Studying variability modes such as the IOD, ENSO, PDO, AMV, and NAO and their influence on regional and global climate."
+    }
+  ],
+  "recruitingStatement": "We welcome inquiries from motivated students and researchers with a background in the sciences who are interested in physical oceanography and climate change.",
+  "recruitingEmail": "asavita@iitd.ac.in",
+  "scholarUrl": "",
+  "researchgateUrl": ""
+}

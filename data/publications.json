@@ -1,67 +1,174 @@
 {
-  "publications": [
+  "papers": [
     {
-      "year": 2026,
-      "authors": "**Doe, J.A.**, Osei, A., & Santos, M.",
-      "title": "Jet stream variability and its links to mid-latitude temperature extremes.",
-      "journal": "Journal of Climate",
-      "citation_detail": "39(4), 1123–1140.",
-      "doi_url": "#",
-      "pdf_url": "#"
+      "year": 2025,
+      "authors": "Yingxue Liu, Joakim Kjellsson, **Abhishek Savita** and Wonsun Park",
+      "title": "Impact of horizontal resolution and model time step on European precipitation extremes in the OpenIFS 43r3 atmospheric model.",
+      "journal": "Geoscientific Model Development",
+      "citation_detail": "18, 5435–5449.",
+      "doi_url": "https://doi.org/10.5194/gmd-18-5435-2025"
     },
     {
-      "year": 2026,
-      "authors": "Lin, W., **Doe, J.A.**",
-      "title": "A machine learning emulator for regional atmospheric circulation patterns.",
+      "year": 2025,
+      "authors": "**Abhishek Savita**, Joakim Kjellsson, Mojib Latif, Hyacinth C. Nnamchi and Sebastian Wahl",
+      "title": "Causes of Eurasian Winter-Cooling During the Late 20th and Early 21st Century.",
       "journal": "Geophysical Research Letters",
-      "citation_detail": "53(2), e2026GL107234.",
-      "doi_url": "#",
-      "pdf_url": "#"
+      "citation_detail": "DOI:10.1029/2024GL114140.",
+      "doi_url": "https://doi.org/10.1029/2024GL114140"
     },
     {
       "year": 2025,
-      "authors": "Okoro, D., **Doe, J.A.**, & Osei, A.",
-      "title": "Seasonal predictability of extreme precipitation using multi-model ensembles.",
+      "authors": "P. M. Forster, C. Smith, T. Walsh, et al. (incl. **Abhishek Savita**)",
+      "title": "Indicators of Global Climate Change 2024: annual update of key indicators of the state of the climate system and human influence.",
+      "journal": "Earth System Science Data Discussions",
+      "citation_detail": "accepted.",
+      "doi_url": "https://doi.org/10.5194/essd-2025-250"
+    },
+    {
+      "year": 2024,
+      "authors": "**Abhishek Savita**, J. Kjellsson, R. P. Kedzierski, M. Latif and S. Wahl",
+      "title": "Assessment of Climate Biases in OpenIFS Version 43r3 across Model Horizontal Resolutions.",
+      "journal": "Geoscientific Model Development",
+      "citation_detail": "17, 1813–1829.",
+      "doi_url": "https://gmd.copernicus.org/articles/17/1813/2024"
+    },
+    {
+      "year": 2023,
+      "authors": "M. Latif, T. Bayr, J. Kjellsson, et al. (incl. **Abhishek Savita**)",
+      "title": "Strengthening atmospheric circulation and trade winds slowed tropical Pacific surface warming.",
+      "journal": "Communications Earth & Environment",
+      "citation_detail": "4, 249.",
+      "doi_url": "https://doi.org/10.1038/s43247-023-00912-4"
+    },
+    {
+      "year": 2023,
+      "authors": "K. von Schuckmann, A. Minière, et al. (incl. **Abhishek Savita**)",
+      "title": "Heat stored in the Earth system 1960–2020: where does the energy go?",
+      "journal": "Earth System Science Data",
+      "citation_detail": "15, 1675–1709.",
+      "doi_url": "https://doi.org/10.5194/essd-15-1675-2023"
+    },
+    {
+      "year": 2023,
+      "authors": "Matthew P. Couldrey, Jonathan M. Gregory, et al. (incl. **Abhishek Savita**)",
+      "title": "Greenhouse-gas forced changes in the Atlantic meridional overturning circulation and related worldwide sea-level change.",
       "journal": "Climate Dynamics",
-      "citation_detail": "64(11), 3891–3907.",
-      "doi_url": "#",
-      "pdf_url": "#"
+      "citation_detail": "60, 2003–2039.",
+      "doi_url": "https://doi.org/10.1007/s00382-022-06386-y"
     },
     {
-      "year": 2025,
-      "authors": "Reyes, T., **Doe, J.A.**",
-      "title": "Ocean heat transport variability and its role in decadal climate prediction.",
-      "journal": "Journal of Physical Oceanography",
-      "citation_detail": "55(6), 1455–1472.",
-      "doi_url": "#",
-      "pdf_url": "#"
+      "year": 2022,
+      "authors": "C. Mackallah, M. A. Chamberlain, et al. (incl. **Abhishek Savita**)",
+      "title": "ACCESS datasets for CMIP6: methodology and idealised experiments.",
+      "journal": "Journal of Southern Hemisphere Earth Systems Science",
+      "citation_detail": "72(2), 93–116.",
+      "doi_url": "https://doi.org/10.1071/ES21031"
     },
     {
-      "year": 2025,
-      "authors": "Kim, H., **Doe, J.A.**, & Lin, W.",
-      "title": "Arctic amplification and its influence on midlatitude atmospheric blocking.",
-      "journal": "Nature Climate Change",
-      "citation_detail": "15, 512–520.",
-      "doi_url": "#",
-      "pdf_url": "#"
-    },
-    {
-      "year": 2024,
-      "authors": "Achebe, S., **Doe, J.A.**",
-      "title": "Evaluating climate model biases in simulated storm track intensity.",
+      "year": 2022,
+      "authors": "**Abhishek Savita**, Catia M. Domingues, Tim Boyer, et al.",
+      "title": "Quantifying Spread in Spatiotemporal Changes of Upper-Ocean Heat Content Estimates.",
       "journal": "Journal of Climate",
-      "citation_detail": "37(19), 6301–6318.",
-      "doi_url": "#",
-      "pdf_url": "#"
+      "citation_detail": "35, 851–875.",
+      "doi_url": "https://doi.org/10.1175/JCLI-D-20-0603.1"
     },
     {
-      "year": 2024,
-      "authors": "**Doe, J.A.**, Santos, M.",
-      "title": "Persistent weather regimes under a changing climate: a dynamical systems perspective.",
-      "journal": "Quarterly Journal of the Royal Meteorological Society",
-      "citation_detail": "150(758), 221–238.",
-      "doi_url": "#",
-      "pdf_url": "#"
+      "year": 2021,
+      "authors": "**Abhishek Savita**, Jan D. Zika, Catia M. Domingues, et al.",
+      "title": "Super residual circulation: A new perspective on ocean vertical heat transport.",
+      "journal": "Journal of Physical Oceanography",
+      "citation_detail": "51(8), 2443–2462.",
+      "doi_url": "https://doi.org/10.1175/JPO-D-21-0008.1"
+    },
+    {
+      "year": 2021,
+      "authors": "Fabio Boeira Dias, Catia M. Domingues, et al. (incl. **Abhishek Savita**)",
+      "title": "Subpolar Southern Ocean Response to Changes in the Surface Momentum.",
+      "journal": "Journal of Climate",
+      "citation_detail": "34, 8755–8775.",
+      "doi_url": "https://doi.org/10.1175/JCLI-D-21-0161"
+    },
+    {
+      "year": 2021,
+      "authors": "Matthew P. Couldrey, Jonathan M. Gregory, et al. (incl. **Abhishek Savita**)",
+      "title": "What causes the spread of model projections of ocean dynamic sea-level change.",
+      "journal": "Climate Dynamics",
+      "citation_detail": "56, 155–187.",
+      "doi_url": "https://doi.org/10.1007/s00382-020-05471-4"
+    },
+    {
+      "year": 2020,
+      "authors": "A. E. Kiss, A. McC. Hogg, et al. (incl. **Abhishek Savita**)",
+      "title": "ACCESS-OM2 v1.0: a global ocean–sea ice model at three resolutions.",
+      "journal": "Geoscientific Model Development",
+      "citation_detail": "13, 401–442.",
+      "doi_url": "https://doi.org/10.5194/gmd-13-401-2020"
+    },
+    {
+      "year": 2020,
+      "authors": "Fabio Boeira Dias, R. Fiedler, et al. (incl. **Abhishek Savita**)",
+      "title": "Ocean Heat Storage in Response to Changing Ocean Circulation Processes.",
+      "journal": "Journal of Climate",
+      "citation_detail": "33, 9065–9082.",
+      "doi_url": "https://doi.org/10.1175/JCLI-D-19-1016.1"
+    },
+    {
+      "year": 2019,
+      "authors": "Daohua Bi, Martin Dix, et al. (incl. **Abhishek Savita**)",
+      "title": "Configuration and spin-up of ACCESS-CM2.",
+      "journal": "Journal of Southern Hemisphere Earth Systems Science",
+      "citation_detail": "70(1), 225–251.",
+      "doi_url": "https://doi.org/10.1071/ES19040"
+    },
+    {
+      "year": 2019,
+      "authors": "B. Meyssignac, T. Boyer, Z. Zhao, et al. (incl. **Abhishek Savita**)",
+      "title": "Measuring Global Ocean Heat Content to Estimate the Earth Energy Imbalance.",
+      "journal": "Frontiers in Marine Science",
+      "citation_detail": "6, 432.",
+      "doi_url": "https://doi.org/10.3389/fmars.2019.00432"
+    }
+  ],
+  "datasets": [
+    {
+      "year": 2021,
+      "authors": "Ryan Holmes, Andrew Kiss, et al. (incl. **Abhishek Savita**)",
+      "title": "CSIRO-COSIMA ACCESS-OM2-025 model output prepared for CMIP6 OMIP omip2.",
+      "journal": "Earth System Grid Federation",
+      "citation_detail": "",
+      "doi_url": "https://doi.org/10.22033/ESGF/CMIP6.14690"
+    },
+    {
+      "year": 2021,
+      "authors": "Hakase Hayashida, Andrew Kiss, et al. (incl. **Abhishek Savita**)",
+      "title": "CSIRO-COSIMA ACCESS-OM2 model output prepared for CMIP6 OMIP omip2.",
+      "journal": "Earth System Grid Federation",
+      "citation_detail": "",
+      "doi_url": "http://doi.org/10.22033/ESGF/CMIP6.14689"
+    },
+    {
+      "year": 2019,
+      "authors": "**Abhishek Savita**, Simon Marsland, et al.",
+      "title": "CSIRO-ARCCSS ACCESS-CM2 model output prepared for CMIP6 FAFMIP.",
+      "journal": "Earth System Grid Federation",
+      "citation_detail": "",
+      "doi_url": "https://doi.org/10.22033/ESGF/CMIP6.2282"
+    },
+    {
+      "year": 2019,
+      "authors": "Martin Dix, Daohua Bi, et al. (incl. **Abhishek Savita**)",
+      "title": "CSIRO-ARCCSS ACCESS-CM2 model output prepared for CMIP6 CMIP.",
+      "journal": "Earth System Grid Federation",
+      "citation_detail": "",
+      "doi_url": "https://doi.org/10.22033/ESGF/CMIP6.2281"
+    },
+    {
+      "year": 2019,
+      "authors": "Martin Dix, Daohua Bi, et al. (incl. **Abhishek Savita**)",
+      "title": "CSIRO-ARCCSS ACCESS-CM2 model output prepared for CMIP6 ScenarioMIP.",
+      "journal": "Earth System Grid Federation",
+      "citation_detail": "",
+      "doi_url": "https://doi.org/10.22033/ESGF/CMIP6.2285"
     }
   ]
 }
