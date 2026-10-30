@@ -17,7 +17,16 @@
       "detail": "PhD Student, 1st Year"
     }
   ],
-  "mtechStudents": [],
+  "mtechStudents": [
+    {
+      "name": "Monsi Florence Elizabeth Katikala",
+      "detail": "M.Tech Student, 2nd Year"
+    },
+    {
+      "detail": "M.Tech Student, 2nd Year",
+      "name": "Shatakshi Rawat"
+    }
+  ],
   "masterStudents": [
     {
       "name": "Denise Fukai",
