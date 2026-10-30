@@ -1,5 +1,22 @@
 {
-  "phdStudents": [],
+  "phdStudents": [
+    {
+      "name": "M. Ravi Naik",
+      "detail": "PhD Student, 2nd Year"
+    },
+    {
+      "name": "Yashwant Kuber Lokare",
+      "detail": "PhD Student, 2nd Year"
+    },
+    {
+      "name": "Souhitya Pattanayak",
+      "detail": "PhD Student, 1st Year"
+    },
+    {
+      "name": "Hager Hamid Ali",
+      "detail": "PhD Student, 1st Year"
+    }
+  ],
   "mtechStudents": [],
   "masterStudents": [
     {
