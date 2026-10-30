@@ -1,4 +1,17 @@
 {
-  "postgraduate": [],
+  "postgraduate": [
+    {
+      "code": "ASL7380",
+      "name": "Numerical Modelling of the Atmosphere and Ocean",
+      "semester": "Semster II (Core Course)",
+      "description": "Introduction to weather and climate models, numerical modeling versus other modeling approaches, examples of atmospheric and oceanic simulations, model hierarchy (simple, intermediate, complex); governing equations in cartesian, isobaric and sigma coordinate systems; numerical discretization (finite difference, finite volume, spectral) and integration, stability, CFL criterion, unconditionally stable numerical scheme; model components, dynamical core, physical parameterization, tracers, coupling of components; global and regional models used in weather forecasting and climate simulations."
+    },
+    {
+      "code": "ASL7360 ",
+      "semester": "Semester I (Elective Course)",
+      "name": "Science of Climate Change ",
+      "description": "Description of the climate system (general circulation, hydrological cycle, carbon cycle). Natural greenhouse effect and the effect of trace gases and aerosols. Forcings (natural and anthropogenic), fast and slow feedback, equilibrium climate sensitivity, transient climate response. Climates of the past (ice ages, proxy records, abrupt climate change, instrumental record of climate). Climate variability and timescales; Madden-Julian Oscillation (MJO), El Niño–Southern Oscillation (ENSO), Pacific Decadal Oscillation (PDO), Milankovic cycles. Modeling climate: simple Energy Balance Models (EBMs), coupled climate models. Natural and anthropogenic climate change. Future climate projections.\n"
+    }
+  ],
   "undergraduate": []
 }
